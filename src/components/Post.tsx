@@ -12,7 +12,10 @@ const Post: React.FC<IProps> = ({
   category,
   tags,
 }) => {
-  console.log('Post Props:', title, image, slug, date, body, category, tags);
+  console.log('slug:', slug);
+  console.log('date:', date);
+  console.log('category:', category);
+  console.log('tags:', tags);
   return (
     <React.Fragment>
       <h2>{title}</h2>
