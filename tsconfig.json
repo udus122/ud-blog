@@ -1,23 +1,24 @@
 {
   "compilerOptions": {
+    "strict": true,
+    "allowJs": true,
     "target": "ES2015",
     "module": "esnext",
     "lib": ["DOM", "ES2015"],
+    "isolatedModules": true,
     "jsx": "preserve",
-    "strict": true,
+    "noEmit": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "typeRoots": ["./node_modules/@types", "src/@types"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    },
-    "allowJs": true,
-    "noEmit": true,
-    "isolatedModules": true
+    }
   },
-  "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

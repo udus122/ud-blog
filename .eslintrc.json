@@ -37,7 +37,9 @@
   ],
   "rules": {
     // TypeScirpt なので prop-types は要らない
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
   },
   // .js ファイルをオーバーライド （webpack.conig.jsなど）
   "overrides": [
