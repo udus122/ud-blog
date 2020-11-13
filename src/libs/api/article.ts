@@ -1,5 +1,5 @@
 import client from '../contentful';
-import { IArticleField } from '@/@types/contentful';
+import { IArticleField } from '@/types/contentful';
 
 export const fetchEntries = async () => {
   const entries = await client.getEntries<IArticleField>({
