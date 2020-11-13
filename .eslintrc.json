@@ -29,6 +29,9 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "prettier",
@@ -39,7 +42,11 @@
     // TypeScirpt なので prop-types は要らない
     "react/prop-types": "off",
     "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    // eslint-plugin-import用の設定
+    "import/no-unresolved": "off",
+    "sort-imports": "off",
+    "import/order": ["error", { "alphabetize": { "order": "asc" } }]
   },
   // .js ファイルをオーバーライド （webpack.conig.jsなど）
   "overrides": [
