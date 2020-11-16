@@ -8,7 +8,7 @@
   },
   // パーサー
   "parser": "@typescript-eslint/parser",
-  // jsx を使います
+  // jsx を使う
   "parserOptions": {
     "ecmaVersion": 2018,
     "ecmaFeatures": {
@@ -46,7 +46,7 @@
     // eslint-plugin-import用の設定
     "import/no-unresolved": "off",
     "sort-imports": "off",
-    "import/order": ["error", { "alphabetize": { "order": "asc" } }]
+    "import/order": ["warn", { "alphabetize": { "order": "asc" } }]
   },
   // .js ファイルをオーバーライド （webpack.conig.jsなど）
   "overrides": [
