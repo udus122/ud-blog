@@ -1,4 +1,4 @@
-import { Asset, Entry, Link } from 'contentful';
+import { Asset, Link } from 'contentful';
 
 export interface ICategoryField {
   title: string;

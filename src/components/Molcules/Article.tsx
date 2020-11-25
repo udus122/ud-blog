@@ -1,9 +1,9 @@
+import { IArticleField } from '@/types/contentful';
 import * as React from 'react';
-import { IArticleField } from '../@types/contentful';
 
 type IProps = IArticleField;
 
-const Post: React.FC<IProps> = ({
+const Article: React.FC<IProps> = ({
   title,
   image,
   slug,
@@ -18,7 +18,7 @@ const Post: React.FC<IProps> = ({
   console.log('tags:', tags);
   return (
     <React.Fragment>
-      <h2>{title}</h2>
+      <h2 css={{ color: 'red' }}>{title}</h2>
       {image && <img src={image.fields.file.url} width={100} height={100} />}
       <h3>body</h3>
       <p>{body}</p>
@@ -27,4 +27,4 @@ const Post: React.FC<IProps> = ({
   );
 };
 
-export default Post;
+export default Article;
