@@ -1,21 +1,11 @@
 import { IArticleField } from '@/types/contentful';
+import { Entry } from 'contentful';
 import * as React from 'react';
 
-type IProps = IArticleField;
+type IProps = { article: Entry<IArticleField> };
 
-const Article: React.FC<IProps> = ({
-  title,
-  image,
-  slug,
-  date,
-  body,
-  category,
-  tags,
-}) => {
-  console.log('slug:', slug);
-  console.log('date:', date);
-  console.log('category:', category);
-  console.log('tags:', tags);
+const Article: React.FC<IProps> = ({ article }) => {
+  const { title, image, body } = article.fields;
   return (
     <React.Fragment>
       <h2 css={{ color: 'red' }}>{title}</h2>
