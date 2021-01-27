@@ -1,11 +1,11 @@
 import Document, {
   DocumentContext,
-  Html,
   Head,
+  Html,
   Main,
   NextScript,
-} from 'next/document';
-import * as React from 'react';
+} from "next/document";
+import * as React from "react";
 
 class MyDocument extends Document {
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -14,6 +14,7 @@ class MyDocument extends Document {
     return initialProps;
   }
 
+  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   render() {
     return (
       <Html>

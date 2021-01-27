@@ -1,11 +1,10 @@
-import { IArticleField } from '@/types/contentful';
-import { Entry } from 'contentful';
-import Head from 'next/head';
-import Link from 'next/link';
-import * as React from 'react';
-
+import Head from "next/head";
+import Link from "next/link";
+import * as React from "react";
+import type { Entry } from "contentful";
+import type { IArticleFields } from "@/types/contentful";
 type IProps = {
-  articles: Entry<IArticleField>[];
+  articles: Entry<IArticleFields>[];
 };
 
 const IndexPage: React.FC<IProps> = ({ articles }) => {

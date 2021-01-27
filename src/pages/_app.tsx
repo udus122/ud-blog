@@ -1,7 +1,7 @@
-import { CssBaseline } from '@material-ui/core';
-import { AppProps } from 'next/app';
-import Head from 'next/head';
-import * as React from 'react';
+import { CssBaseline } from "@material-ui/core";
+import { AppProps } from "next/app";
+import Head from "next/head";
+import * as React from "react";
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (

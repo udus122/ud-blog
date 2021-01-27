@@ -1,5 +1,5 @@
-import Article from '@/components/Molcules/Article';
-import * as React from 'react';
+import * as React from "react";
+import Article from "@/components/Molcules/Article";
 
 type IProps = React.ComponentProps<typeof Article>;
 

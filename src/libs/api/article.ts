@@ -1,17 +1,15 @@
-import { IArticleField } from '@/types/contentful';
-import { Entry } from 'contentful';
-import client from '../contentful';
+import type { Entry, EntryCollection } from "contentful";
+import type { IArticleFields } from "@/types/contentful";
+import client from "../contentful";
 
-export const fetchEntries = async (): Promise<Entry<IArticleField>[]> => {
+export const fetchEntries = async (): Promise<
+  EntryCollection<IArticleFields>
+> => {
   try {
-    const entries = await client.getEntries<IArticleField>({
-      content_type: 'article',
+    const entries = await client.getEntries<IArticleFields>({
+      content_type: "article",
     });
-    if (entries.items) {
-      return entries.items;
-    } else {
-      return [];
-    }
+    return entries;
   } catch (err) {
     console.error(err);
     throw new Error(err);
@@ -20,19 +18,19 @@ export const fetchEntries = async (): Promise<Entry<IArticleField>[]> => {
 
 export const fetchEntry = async (
   slug: string
-): Promise<Entry<IArticleField>> => {
+): Promise<Entry<IArticleFields>> => {
   try {
-    const postEntries = await client.getEntries<IArticleField>({
-      content_type: 'article',
-      'fields.slug': slug,
+    const postEntries = await client.getEntries<IArticleFields>({
+      content_type: "article",
+      "fields.slug": slug,
+      limit: 1,
     });
-    if (postEntries.items.length === 1) {
-      return postEntries.items[0];
-    } else {
-      throw new Error('page not found');
+    if (postEntries.total === 0) {
+      throw new Error("投稿が見つかりません");
     }
+    return postEntries.items[0];
   } catch (err) {
-    console.error('err:', err);
+    console.error("err:", err);
     throw new Error(err);
   }
 };

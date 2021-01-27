@@ -1,16 +1,34 @@
 {
   "name": "ud-blog",
   "version": "1.0.0",
+  "license": "UNLICENSED",
   "scripts": {
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc",
+    "type-check": "tsc --pretty --noEmit",
+    "format": "prettier --write .",
+    "lint": "eslint ./src --ext ts --ext tsx --ext js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "contentful-typescript-codegen": "contentful-typescript-codegen --output src/@types/contentful/index.d.ts"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run type-check"
+    }
+  },
+  "lint-staged": {
+    "*.@(ts|tsx|md)": [
+      "yarn lint",
+      "yarn format"
+    ],
+    "*.{md,html,css}": "prettier --write"
   },
   "dependencies": {
-    "@emotion/core": "^10.1.1",
-    "@material-ui/core": "^4.11.0",
+    "@emotion/react": "^11.1.4",
+    "@material-ui/core": "^4.11.3",
     "contentful": "^7.14.8",
     "next": "^10.0.1",
     "react": "^17.0.1",
@@ -18,23 +36,29 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.8",
-    "@storybook/addon-actions": "^6.1.4",
-    "@storybook/addon-essentials": "^6.1.4",
-    "@storybook/addon-links": "^6.1.4",
-    "@storybook/react": "^6.1.4",
+    "@emotion/babel-plugin": "^11.1.2",
+    "@storybook/addon-actions": "^6.1.15",
+    "@storybook/addon-essentials": "^6.1.15",
+    "@storybook/addon-links": "^6.1.15",
+    "@storybook/react": "^6.1.15",
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.56",
     "@types/react-dom": "^16.9.9",
     "@typescript-eslint/eslint-plugin": "^4.7.0",
-    "@typescript-eslint/parser": "^4.7.0",
+    "@typescript-eslint/parser": "^4.14.0",
     "babel-loader": "^8.2.1",
+    "contentful-management": "^7.5.2",
+    "contentful-typescript-codegen": "^3.2.1",
+    "dotenv": "^8.2.0",
     "eslint": "^7.13.0",
     "eslint-config-prettier": "6.11.0",
+    "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.3",
     "prettier": "^2.1.2",
-    "typescript": "4.0"
-  },
-  "license": "MIT"
+    "typescript": "^4.1.3"
+  }
 }

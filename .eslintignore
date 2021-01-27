@@ -1,0 +1,11 @@
+**/node_modules/*
+**/out/*
+**/.next/*
+**/*.md
+
+# storybookのじどう
+**/.storybook/*
+# **/stories/*
+
+# rootのjsファイルに対しててlintしない
+*.js

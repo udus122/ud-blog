@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 const Header: React.FC = () => {
   return <h1>Hello Header</h1>;
