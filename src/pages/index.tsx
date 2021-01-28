@@ -1,4 +1,4 @@
-import type { GetStaticProps } from "next";
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import * as React from "react";
 import IndexPage from "@/components/Pages/IndexPage";
 import { fetchEntries as fetchArticleEntries } from "@/libs/api/article";
@@ -15,7 +15,9 @@ export const getStaticProps: GetStaticProps<IProps> = async () => {
   };
 };
 
-const Index = ({ articles }: IProps): JSX.Element => {
+const Index = ({
+  articles,
+}: InferGetStaticPropsType<typeof IndexPage>): JSX.Element => {
   return <IndexPage articles={articles} />;
 };
 

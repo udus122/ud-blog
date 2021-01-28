@@ -1,20 +1,16 @@
 import * as React from "react";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
-import { Entry } from "contentful";
 import {
   fetchEntries as fetchArticleEntries,
   fetchEntry as fetchArticleEntry,
 } from "@/libs/api/article";
 import ArticlePage from "@/components/Pages/ArticlePage";
-import { IArticleFields } from "@/types/contentful";
 
 type IQuery = {
   slug: string;
 };
 
-type IProps = {
-  article: Entry<IArticleFields>;
-};
+type IProps = React.ComponentProps<typeof ArticlePage>;
 
 export const getStaticPaths: GetStaticPaths<IQuery> = async () => {
   const articleCollection = await fetchArticleEntries();

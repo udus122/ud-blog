@@ -4,7 +4,8 @@ import { Button } from "./Button";
 import "./header.css";
 
 export interface HeaderProps {
-  user?: unknown;
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  user?: {};
   onLogin: () => void;
   onLogout: () => void;
   onCreateAccount: () => void;
