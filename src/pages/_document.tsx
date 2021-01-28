@@ -1,5 +1,6 @@
 import Document, {
   DocumentContext,
+  DocumentInitialProps,
   Head,
   Html,
   Main,
@@ -8,14 +9,14 @@ import Document, {
 import * as React from "react";
 
 class MyDocument extends Document {
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  static async getInitialProps(ctx: DocumentContext) {
+  static async getInitialProps(
+    ctx: DocumentContext
+  ): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx);
     return initialProps;
   }
 
-  // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-  render() {
+  render(): JSX.Element {
     return (
       <Html>
         <Head />

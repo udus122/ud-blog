@@ -7,10 +7,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <React.Fragment>
       <Head>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width"
-        />
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <CssBaseline />
       <Component {...pageProps} />
