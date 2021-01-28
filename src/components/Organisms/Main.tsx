@@ -1,7 +1,11 @@
 import * as React from "react";
 
-const Main = (): JSX.Element => {
-  return <h1>Hello Main</h1>;
+type IProps = {
+  children?: React.ReactNode;
+};
+
+const Main = ({ children }: IProps): JSX.Element => {
+  return <React.Fragment>{children}</React.Fragment>;
 };
 
 export default Main;

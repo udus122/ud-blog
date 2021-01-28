@@ -1,8 +1,9 @@
 import * as React from "react";
 import type { Entry } from "contentful";
 import Head from "next/head";
-import Link from "next/link";
 import type { IArticleFields } from "@/types/contentful";
+import Template from "@/components/Templates/Template";
+import ArticleList from "@/components/Organisms/ArticleList";
 
 type IProps = {
   articles: Entry<IArticleFields>[];
@@ -14,15 +15,10 @@ const IndexPage = ({ articles }: IProps): JSX.Element => {
       <Head>
         <title>UDlog</title>
       </Head>
-      <h1>Udlog | Hello, Next × Contentful</h1>
-      {articles &&
-        articles.map((article) => (
-          <div key={article.sys.id}>
-            <Link href={`/articles/${article.fields.slug}`}>
-              <a>{article.fields.title}</a>
-            </Link>
-          </div>
-        ))}
+      <Template title={"UDlog"}>
+        <h2>This is Main</h2>
+        <ArticleList articles={articles} />
+      </Template>
     </React.Fragment>
   );
 };
