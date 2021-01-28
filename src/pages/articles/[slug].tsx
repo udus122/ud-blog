@@ -1,20 +1,14 @@
-import { ParsedUrlQuery } from "querystring";
-import { Entry } from "contentful";
-import {
-  GetStaticPaths,
-  GetStaticPropsContext,
-  GetStaticPropsResult,
-  InferGetStaticPropsType,
-} from "next";
 import * as React from "react";
-import { IArticleFields } from "@/types/contentful";
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
+import { Entry } from "contentful";
 import {
   fetchEntries as fetchArticleEntries,
   fetchEntry as fetchArticleEntry,
 } from "@/libs/api/article";
 import ArticlePage from "@/components/Pages/ArticlePage";
+import { IArticleFields } from "@/types/contentful";
 
-type IParams = ParsedUrlQuery & {
+type IQuery = {
   slug: string;
 };
 
@@ -22,26 +16,27 @@ type IProps = {
   article: Entry<IArticleFields>;
 };
 
-export const getStaticPaths: GetStaticPaths<IParams> = async () => {
+export const getStaticPaths: GetStaticPaths<IQuery> = async () => {
   const articleCollection = await fetchArticleEntries();
   const articles = articleCollection.items;
+  const paths = articles.map((article) => ({
+    params: {
+      slug: article.fields.slug,
+    },
+  }));
   return {
-    paths: articles.map((article) => ({
-      params: {
-        slug: article.fields.slug,
-      },
-    })),
+    paths,
     fallback: false,
   };
 };
 
-export const getStaticProps = async (
-  context: GetStaticPropsContext<IParams>
-): Promise<GetStaticPropsResult<IProps>> => {
-  const slug = context.params?.slug;
-  if (typeof slug === "undefined") {
-    return { props: {} } as GetStaticPropsResult<IProps>;
+export const getStaticProps: GetStaticProps<IProps, IQuery> = async ({
+  params,
+}) => {
+  if (params === undefined) {
+    throw new Error("params is undefined");
   }
+  const { slug } = params;
   const article = await fetchArticleEntry(slug);
   return {
     props: {

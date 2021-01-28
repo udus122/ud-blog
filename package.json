@@ -9,6 +9,7 @@
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
     "lint": "eslint ./src --ext ts --ext tsx --ext js",
+    "lint:fix": "eslint --fix ./src --ext ts --ext tsx --ext js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "contentful-typescript-codegen": "contentful-typescript-codegen --output src/@types/contentful/index.d.ts"

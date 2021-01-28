@@ -1,7 +1,7 @@
-import Head from "next/head";
-import Link from "next/link";
 import * as React from "react";
 import type { Entry } from "contentful";
+import Head from "next/head";
+import Link from "next/link";
 import type { IArticleFields } from "@/types/contentful";
 
 type IProps = {

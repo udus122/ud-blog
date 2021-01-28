@@ -29,7 +29,8 @@ settings:
   import/resolver:
     alias:
       map:
-        - ["@", "./src"]
+        - - "@"
+          - "./src"
       extensions:
         - ".js"
         - ".jsx"
@@ -64,4 +65,3 @@ rules:
   sort-imports:
     - warn
     - ignoreDeclarationSort: true
-      ignoreMemberSort: false
