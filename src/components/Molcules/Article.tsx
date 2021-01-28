@@ -4,7 +4,7 @@ import type { IArticleFields } from "@/types/contentful";
 
 type IProps = { article: Entry<IArticleFields> };
 
-const Article: React.FC<IProps> = ({ article }) => {
+const Article = ({ article }: IProps): JSX.Element => {
   const { title, image, body } = article.fields;
   return (
     <React.Fragment>

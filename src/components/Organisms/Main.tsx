@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Main: React.FC = () => {
+const Main = (): JSX.Element => {
   return <h1>Hello Main</h1>;
 };
 

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Template: React.FC = () => {
+const Template = (): JSX.Element => {
   return <h1>Hello Template</h1>;
 };
 

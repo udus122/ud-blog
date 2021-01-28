@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Sidebar: React.FC = () => {
+const Sidebar = (): JSX.Element => {
   return <h1>Hello Sidebar</h1>;
 };
 

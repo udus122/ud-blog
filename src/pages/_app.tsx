@@ -3,7 +3,7 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import * as React from "react";
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
+const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <React.Fragment>
       <Head>

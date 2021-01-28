@@ -3,7 +3,7 @@ import Article from "@/components/Molcules/Article";
 
 type IProps = React.ComponentProps<typeof Article>;
 
-const ArticlePage: React.FC<IProps> = ({ article }) => {
+const ArticlePage = ({ article }: IProps): JSX.Element => {
   return (
     <React.Fragment>
       <Article article={article} />

@@ -3,11 +3,12 @@ import Link from "next/link";
 import * as React from "react";
 import type { Entry } from "contentful";
 import type { IArticleFields } from "@/types/contentful";
+
 type IProps = {
   articles: Entry<IArticleFields>[];
 };
 
-const IndexPage: React.FC<IProps> = ({ articles }) => {
+const IndexPage = ({ articles }: IProps): JSX.Element => {
   return (
     <React.Fragment>
       <Head>

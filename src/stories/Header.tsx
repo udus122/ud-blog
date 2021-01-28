@@ -10,12 +10,12 @@ export interface HeaderProps {
   onCreateAccount: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({
+export const Header = ({
   user,
   onLogin,
   onLogout,
   onCreateAccount,
-}) => (
+}: HeaderProps): JSX.Element => (
   <header>
     <div className="wrapper">
       <div>

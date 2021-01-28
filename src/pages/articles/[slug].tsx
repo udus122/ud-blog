@@ -50,9 +50,9 @@ export const getStaticProps = async (
   };
 };
 
-const Article: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
+const Article = ({
   article,
-}) => {
+}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   return <ArticlePage article={article} />;
 };
 

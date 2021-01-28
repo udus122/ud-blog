@@ -5,10 +5,6 @@ import { fetchEntries as fetchArticleEntries } from "@/libs/api/article";
 
 type IProps = React.ComponentProps<typeof IndexPage>;
 
-const Index: React.FC<IProps> = ({ articles }) => {
-  return <IndexPage articles={articles} />;
-};
-
 export const getStaticProps: GetStaticProps<IProps> = async () => {
   const articleCollection = await fetchArticleEntries();
   const articles = articleCollection.items;
@@ -17,6 +13,10 @@ export const getStaticProps: GetStaticProps<IProps> = async () => {
       articles,
     },
   };
+};
+
+const Index = ({ articles }: IProps): JSX.Element => {
+  return <IndexPage articles={articles} />;
 };
 
 export default Index;

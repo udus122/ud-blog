@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const About: React.FC = () => {
+const About = (): JSX.Element => {
   return <h1>This is About Page</h1>;
 };
 
