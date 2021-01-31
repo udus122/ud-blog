@@ -17,7 +17,6 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-      // "contentful": ["./src/@types/contentful"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
