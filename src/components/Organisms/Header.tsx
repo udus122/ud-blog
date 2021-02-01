@@ -2,7 +2,7 @@ import * as React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import { Typography } from "@material-ui/core";
-
+import Link from "next/link";
 type IProps = {
   title: string;
 };
@@ -12,9 +12,11 @@ const Header = ({ title }: IProps): JSX.Element => {
     <React.Fragment>
       <AppBar position={"static"}>
         <Toolbar>
-          <Typography component="h1" variant="h5">
-            {title}
-          </Typography>
+          <Link href="/">
+            <Typography component="h1" variant="h5" css={{ cursor: "pointer" }}>
+              {title}
+            </Typography>
+          </Link>
         </Toolbar>
       </AppBar>
     </React.Fragment>
