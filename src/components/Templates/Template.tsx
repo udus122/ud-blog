@@ -18,8 +18,10 @@ const Template = ({ children, title }: IProps): JSX.Element => {
       <Header title={title} />
       <Container maxWidth="lg" css={{ marginTop: theme.spacing(3) }}>
         <Grid container spacing={5}>
-          <Main>{children}</Main>
-          <Sidebar />
+          <Main xs={12} md={9}>
+            {children}
+          </Main>
+          <Sidebar xs={12} md={3} />
         </Grid>
       </Container>
       <Footer title={title} description={"description"} />
