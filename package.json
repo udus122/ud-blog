@@ -34,7 +34,9 @@
     "contentful": "^7.14.8",
     "next": "^10.0.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-markdown": "^5.0.3",
+    "remark-gfm": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.8",
