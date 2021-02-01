@@ -12,7 +12,7 @@ const Template = ({ children, title }: IProps): JSX.Element => {
     <React.Fragment>
       <Header title={title} />
       <Main>{children}</Main>
-      <Footer />
+      <Footer title={title} description={"description"} />
     </React.Fragment>
   );
 };
