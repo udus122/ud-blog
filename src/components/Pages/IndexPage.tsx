@@ -16,7 +16,6 @@ const IndexPage = ({ articles }: IProps): JSX.Element => {
         <title>UDlog</title>
       </Head>
       <Template title={"UDlog"}>
-        <h2>This is Main</h2>
         <ArticleList articles={articles} />
       </Template>
     </React.Fragment>
