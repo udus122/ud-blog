@@ -8,7 +8,7 @@ type IProps = {
 
 const Main = ({ children, ...props }: IProps): JSX.Element => {
   return (
-    <Grid item xs={props.xs} md={props.md}>
+    <Grid item {...props}>
       {children}
     </Grid>
   );

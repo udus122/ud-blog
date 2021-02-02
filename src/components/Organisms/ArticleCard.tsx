@@ -12,10 +12,10 @@ import Link from "next/link";
 
 type IProps = {
   title: string;
-  date: string;
+  date: Date | undefined;
   description: string;
   articleUrl: string;
-  image?: string | undefined;
+  imageUrl?: string | undefined;
   imageTitle?: string | undefined;
 };
 
@@ -24,7 +24,7 @@ const ArticleCard = ({
   date,
   description,
   articleUrl,
-  image,
+  imageUrl,
   imageTitle,
 }: IProps): JSX.Element => {
   return (
@@ -34,13 +34,17 @@ const ArticleCard = ({
           <Card css={{ display: "flex" }}>
             <div css={{ flex: 1 }}>
               <CardContent>
-                <Typography component="h2" variant="h5">
+                <Typography component="h2" variant="h5" noWrap>
                   {title}
                 </Typography>
-                <Typography variant="subtitle1" color="textSecondary">
-                  {date}
+                <Typography
+                  variant="caption"
+                  color="textSecondary"
+                  gutterBottom
+                >
+                  {date ? date.toLocaleDateString() : ""}
                 </Typography>
-                <Typography variant="subtitle1" paragraph>
+                <Typography variant="caption" paragraph noWrap>
                   {description}
                 </Typography>
                 <Typography variant="subtitle1" color="primary">
@@ -53,7 +57,7 @@ const ArticleCard = ({
                 css={{
                   width: 160,
                 }}
-                image={image}
+                image={imageUrl}
                 title={imageTitle}
               />
             </Hidden>
