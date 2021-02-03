@@ -14,10 +14,10 @@ export interface IArticleFields {
   slug: string;
 
   /** Date */
-  date?: string | undefined;
+  date: string;
 
   /** Body */
-  body?: string | undefined;
+  body: string;
 
   /** Category */
   category?: ICategory | undefined;

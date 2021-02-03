@@ -12,7 +12,7 @@
     "lint:fix": "eslint --fix ./src --ext ts --ext tsx --ext js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "contentful-typescript-codegen": "contentful-typescript-codegen --output src/@types/contentful/index.d.ts"
+    "contentful-typescript-codegen": "contentful-typescript-codegen --output src/types/contentful/index.d.ts"
   },
   "husky": {
     "hooks": {
@@ -37,7 +37,8 @@
     "react-dom": "^17.0.1",
     "react-markdown": "^5.0.3",
     "react-syntax-highlighter": "^15.4.3",
-    "remark-gfm": "^1.0.0"
+    "remark-gfm": "^1.0.0",
+    "rss": "^1.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.8",
@@ -49,6 +50,7 @@
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.56",
     "@types/react-dom": "^16.9.9",
+    "@types/rss": "^0.0.28",
     "@typescript-eslint/eslint-plugin": "^4.7.0",
     "@typescript-eslint/parser": "^4.14.0",
     "babel-loader": "^8.2.1",
