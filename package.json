@@ -12,7 +12,9 @@
     "lint:fix": "eslint --fix ./src --ext ts --ext tsx --ext js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "contentful-typescript-codegen": "contentful-typescript-codegen --output src/types/contentful/index.d.ts"
+    "contentful-typescript-codegen": "contentful-typescript-codegen --output src/types/contentful/index.d.ts",
+    "gen:theme-typings": "chakra-cli tokens src/config/chakra/theme.ts",
+    "postinstall": "yarn gen:theme-typings"
   },
   "husky": {
     "hooks": {
@@ -46,11 +48,13 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.8",
+    "@chakra-ui/cli": "^1.1.0",
     "@emotion/babel-plugin": "^11.1.2",
-    "@storybook/addon-actions": "^6.1.15",
-    "@storybook/addon-essentials": "^6.1.15",
-    "@storybook/addon-links": "^6.1.15",
-    "@storybook/react": "^6.1.15",
+    "@storybook/addon-actions": "^6.1.16",
+    "@storybook/addon-essentials": "^6.1.16",
+    "@storybook/addon-links": "^6.1.16",
+    "@storybook/preset-typescript": "^3.0.0",
+    "@storybook/react": "^6.1.16",
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.56",
     "@types/react-dom": "^16.9.9",
@@ -70,6 +74,7 @@
     "husky": "^4.3.8",
     "lint-staged": "^10.5.3",
     "prettier": "^2.1.2",
+    "storybook-addon-next-router": "^2.0.3",
     "typescript": "^4.1.3"
   }
 }
