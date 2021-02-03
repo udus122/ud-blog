@@ -38,6 +38,7 @@ export const getStaticProps: GetStaticProps<IProps, IQuery> = async ({
     props: {
       article,
     },
+    revalidate: 60,
   };
 };
 
