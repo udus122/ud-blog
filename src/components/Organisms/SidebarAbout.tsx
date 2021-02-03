@@ -21,6 +21,10 @@ const Sidebar = (): JSX.Element => {
       >
         UD
       </Typography>
+      <Typography variant="body2">
+        技術的なことを書いていく。 <br />
+        フロントエンド・統計学・機械学習あたりがメイン
+      </Typography>
     </SidebarSection>
   );
 };

@@ -1,6 +1,5 @@
 import * as React from "react";
-import { Container, Grid } from "@material-ui/core";
-import { useTheme } from "@material-ui/core/styles";
+import { Container, Grid, useTheme } from "@material-ui/core";
 import Header from "@/components/Organisms/Header";
 import Main from "@/components/Organisms/Main";
 import Sidebar from "@/components/Organisms/Sidebar";
