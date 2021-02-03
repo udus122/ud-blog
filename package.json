@@ -28,10 +28,14 @@
     "*.{md,html,css}": "prettier --write"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.0.4",
+    "@chakra-ui/react": "^1.2.1",
     "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "contentful": "^7.14.8",
+    "framer-motion": "^3.3.0-beta.22",
     "next": "^10.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
