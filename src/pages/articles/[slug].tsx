@@ -22,7 +22,7 @@ export const getStaticPaths: GetStaticPaths<IQuery> = async () => {
   }));
   return {
     paths,
-    fallback: false,
+    fallback: "blocking",
   };
 };
 
