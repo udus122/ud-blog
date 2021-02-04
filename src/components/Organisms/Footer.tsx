@@ -1,38 +1,21 @@
 import * as React from "react";
-import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
-import { useTheme } from "@material-ui/core/styles";
+import { Box, Heading, Text } from "@chakra-ui/react";
 import Copyright from "@/components/Organisms/Copyright";
 
 type IProps = {
   title: string;
-  description: string;
+  description?: string;
 };
 
-const Footer = ({ description, title }: IProps): JSX.Element => {
-  const theme = useTheme();
+const Footer = ({ title, description }: IProps): JSX.Element => {
   return (
-    <footer
-      css={{
-        backgroundColor: theme.palette.background.paper,
-        padding: theme.spacing(6, 0),
-      }}
-    >
-      <Container maxWidth="sm">
-        <Typography variant="h6" align="center" gutterBottom>
-          {title}
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="textSecondary"
-          component="p"
-        >
-          {description}
-        </Typography>
-        <Copyright />
-      </Container>
-    </footer>
+    <Box as="footer" backgroundColor="gray.500" p={6}>
+      <Heading as="h6" textAlign="center" mb={3} fontSize="1.5rem">
+        {title}
+      </Heading>
+      <Text textAlign="center">{description}</Text>
+      <Copyright />
+    </Box>
   );
 };
 
