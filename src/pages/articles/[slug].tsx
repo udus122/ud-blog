@@ -29,17 +29,24 @@ export const getStaticPaths: GetStaticPaths<IQuery> = async () => {
 export const getStaticProps: GetStaticProps<IProps, IQuery> = async ({
   params,
 }) => {
-  if (params === undefined) {
-    throw new Error("params is undefined");
+  try {
+    if (params === undefined) {
+      throw new Error("params is undefined");
+    }
+    const { slug } = params;
+    const article = await fetchArticleEntry(slug);
+    return {
+      props: {
+        article,
+      },
+      revalidate: 60,
+    };
+  } catch (err) {
+    console.error(err);
+    return {
+      notFound: true,
+    };
   }
-  const { slug } = params;
-  const article = await fetchArticleEntry(slug);
-  return {
-    props: {
-      article,
-    },
-    revalidate: 60,
-  };
 };
 
 const Article = ({
