@@ -7,14 +7,15 @@ import Footer from "@/components/Organisms/Footer";
 
 type IProps = {
   children?: React.ReactNode;
-} & React.ComponentProps<typeof Header>;
+};
 
-const Template = ({ children, title }: IProps): JSX.Element => {
+const Template = ({ children }: IProps): JSX.Element => {
   const theme = useTheme();
+  const blogTitle = "UDlog";
 
   return (
     <React.Fragment>
-      <Header title={title} />
+      <Header title={blogTitle} />
       <Container maxWidth="lg" css={{ marginTop: theme.spacing(3) }}>
         <Grid container spacing={5}>
           <Main xs={12} md={9}>
@@ -23,7 +24,7 @@ const Template = ({ children, title }: IProps): JSX.Element => {
           <Sidebar xs={12} md={3} />
         </Grid>
       </Container>
-      <Footer title={title} description={"description"} />
+      <Footer title={blogTitle} />
     </React.Fragment>
   );
 };
