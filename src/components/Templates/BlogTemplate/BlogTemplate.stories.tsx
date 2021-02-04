@@ -1,16 +1,16 @@
 import React, { ComponentProps } from "react";
 import { Story } from "@storybook/react";
 
-import BlogTemplateCoponent from "./BlogTemplate";
+import { BlogTemplate as BlogTemplateComponent } from "./BlogTemplate";
 
 export default {
   title: "Design System/Template/BlogTemplate",
-  component: BlogTemplateCoponent,
+  component: BlogTemplateComponent,
 };
 
-const Template: Story<ComponentProps<typeof BlogTemplateCoponent>> = (args) => (
-  <BlogTemplateCoponent {...args} />
-);
+const Template: Story<ComponentProps<typeof BlogTemplateComponent>> = (
+  args
+) => <BlogTemplateComponent {...args} />;
 
 export const BlogTemplate = Template.bind({});
 BlogTemplate.args = {

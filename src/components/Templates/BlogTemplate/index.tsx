@@ -1,1 +1,1 @@
-export { default as DefaultExport } from "./BlogTemplate";
+export { BlogTemplate } from "./BlogTemplate";

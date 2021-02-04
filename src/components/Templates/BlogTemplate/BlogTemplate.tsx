@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Container, Grid, useTheme } from "@material-ui/core";
+import { Flex, Grid, GridItem } from "@chakra-ui/react";
 import Header from "@/components/Organisms/Header";
 import Main from "@/components/Organisms/Main";
 import Sidebar from "@/components/Organisms/Sidebar";
@@ -9,23 +9,19 @@ type IProps = {
   children?: React.ReactNode;
 } & React.ComponentProps<typeof Header>;
 
-const BlogTemplate = ({ children, title }: IProps): JSX.Element => {
-  const theme = useTheme();
-
+export const BlogTemplate = ({ children, title }: IProps): JSX.Element => {
   return (
-    <React.Fragment>
+    <Flex display="flex" direction="column" minHeight="100vh">
       <Header title={title} />
-      <Container maxWidth="lg" css={{ marginTop: theme.spacing(3) }}>
-        <Grid container spacing={5}>
-          <Main xs={12} md={9}>
-            {children}
-          </Main>
-          <Sidebar xs={12} md={3} />
-        </Grid>
-      </Container>
-      <Footer title={title} description={"description"} />
-    </React.Fragment>
+      <Grid templateColumns="repeat(4, 1fr)" px={6} gap={6} flexGrow={1}>
+        <GridItem colSpan={{ base: 4, lg: 3 }}>
+          <Main>{children}</Main>
+        </GridItem>
+        <GridItem colSpan={{ base: 4, lg: 1 }}>
+          <Sidebar />
+        </GridItem>
+      </Grid>
+      <Footer title={title} />
+    </Flex>
   );
 };
-
-export default BlogTemplate;

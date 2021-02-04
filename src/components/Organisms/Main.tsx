@@ -1,17 +1,11 @@
 import * as React from "react";
-import { Grid } from "@material-ui/core";
-import type { GridProps } from "@material-ui/core";
 
 type IProps = {
   children?: React.ReactNode;
-} & GridProps;
+};
 
-const Main = ({ children, ...props }: IProps): JSX.Element => {
-  return (
-    <Grid item {...props}>
-      {children}
-    </Grid>
-  );
+const Main = ({ children }: IProps): JSX.Element => {
+  return <React.Fragment>{children};</React.Fragment>;
 };
 
 export default Main;

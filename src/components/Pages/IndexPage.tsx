@@ -1,8 +1,8 @@
 import * as React from "react";
 import type { Entry } from "contentful";
 import Head from "next/head";
+import { BlogTemplate } from "@/components/Templates/BlogTemplate";
 import type { IArticleFields } from "@/types/contentful";
-import Template from "@/components/Templates/Template";
 import ArticleList from "@/components/Organisms/ArticleList";
 
 type IProps = {
@@ -15,9 +15,9 @@ const IndexPage = ({ articles }: IProps): JSX.Element => {
       <Head>
         <title>UDlog</title>
       </Head>
-      <Template title={"UDlog"}>
+      <BlogTemplate title={"UDlog"}>
         <ArticleList articles={articles} />
-      </Template>
+      </BlogTemplate>
     </React.Fragment>
   );
 };
