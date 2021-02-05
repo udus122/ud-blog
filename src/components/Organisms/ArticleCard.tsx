@@ -1,14 +1,13 @@
 import * as React from "react";
 import {
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-  Grid,
-  Hidden,
-  Typography,
-} from "@material-ui/core";
-import Link from "next/link";
+  Container,
+  GridItem,
+  Heading,
+  Image,
+  Link,
+  Text,
+} from "@chakra-ui/react";
+import NextLink from "next/link";
 
 type IProps = {
   title: string;
@@ -28,43 +27,28 @@ const ArticleCard = ({
   imageTitle,
 }: IProps): JSX.Element => {
   return (
-    <Grid item xs={12} md={6}>
-      <Link href={articleUrl} passHref>
-        <CardActionArea component="a">
-          <Card css={{ display: "flex" }}>
-            <div css={{ flex: 1 }}>
-              <CardContent>
-                <Typography component="h2" variant="h5" noWrap>
-                  {title}
-                </Typography>
-                <Typography
-                  variant="caption"
-                  color="textSecondary"
-                  gutterBottom
-                >
-                  {date ? date.toLocaleDateString() : ""}
-                </Typography>
-                <Typography variant="caption" paragraph noWrap>
-                  {description}
-                </Typography>
-                <Typography variant="subtitle1" color="primary">
-                  Continue reading...
-                </Typography>
-              </CardContent>
-            </div>
-            <Hidden xsDown>
-              <CardMedia
-                css={{
-                  width: 160,
-                }}
-                image={imageUrl}
-                title={imageTitle}
-              />
-            </Hidden>
-          </Card>
-        </CardActionArea>
+    <GridItem>
+      <Link as={NextLink} href={articleUrl}>
+        <Container
+          boxShadow="md"
+          rounded="lg"
+          height="160px"
+          px={3}
+          pt={3}
+          pb={4}
+          overflow="hidden"
+          _hover={{ backgroundColor: "gray.50" }}
+        >
+          <Heading as="h2" size="md" isTruncated>
+            {title}
+          </Heading>
+          <Text color="gray.500">{date ? date.toLocaleDateString() : ""}</Text>
+          <Text fontSize="md">{description}</Text>
+          <Text color="blue.700">Continue reading...</Text>
+          <Image width="md" src={imageUrl} alt={imageTitle} fit="cover" />
+        </Container>
       </Link>
-    </Grid>
+    </GridItem>
   );
 };
 

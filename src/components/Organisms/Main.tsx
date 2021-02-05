@@ -5,7 +5,7 @@ type IProps = {
 };
 
 const Main = ({ children }: IProps): JSX.Element => {
-  return <React.Fragment>{children};</React.Fragment>;
+  return <React.Fragment>{children}</React.Fragment>;
 };
 
 export default Main;

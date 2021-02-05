@@ -13,7 +13,7 @@ export const BlogTemplate = ({ children, title }: IProps): JSX.Element => {
   return (
     <Flex display="flex" direction="column" minHeight="100vh">
       <Header title={title} />
-      <Grid templateColumns="repeat(4, 1fr)" px={6} gap={6} flexGrow={1}>
+      <Grid templateColumns="repeat(4, 1fr)" px={3} gap={6} flexGrow={1}>
         <GridItem colSpan={{ base: 4, lg: 3 }}>
           <Main>{children}</Main>
         </GridItem>
