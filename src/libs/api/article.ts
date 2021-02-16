@@ -25,6 +25,7 @@ export const fetchEntry = async (
       "fields.slug": slug,
       limit: 1,
     });
+
     if (articleCollection.total === 0) {
       throw new Error("投稿が見つかりません");
     }
