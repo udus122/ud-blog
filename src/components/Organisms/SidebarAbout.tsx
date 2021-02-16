@@ -1,5 +1,4 @@
 import { Avatar, Typography, useTheme } from "@material-ui/core";
-// import Avatar from "@/components/Atoms/Avatar";
 import SidebarSection from "@/components/Molcules/SidebarSection";
 
 const Sidebar = (): JSX.Element => {

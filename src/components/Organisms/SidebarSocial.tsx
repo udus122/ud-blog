@@ -1,7 +1,5 @@
 import * as React from "react";
-import { Grid, Link } from "@material-ui/core";
 import {
-  Facebook as FacebookIcon,
   GitHub as GitHubIcon,
   Twitter as TwitterIcon,
 } from "@material-ui/icons";
@@ -11,26 +9,24 @@ import SidebarSection from "@/components/Molcules/SidebarSection";
 const socials = [
   { name: "GitHub", icon: GitHubIcon, url: "https://github.com/yudai1202" },
   { name: "Twitter", icon: TwitterIcon, url: "https://twitter.com/udus122" },
-  { name: "Facebook", icon: FacebookIcon, url: "#" },
 ];
 
 const Sidebar = (): JSX.Element => {
   return (
     <SidebarSection title="Social">
       {socials.map((social) => (
-        <Link
-          display="block"
-          variant="body1"
+        <a
+          className="text-steel-800 hover:underline"
           href={social.url}
           key={social.name}
         >
-          <Grid container direction="row" spacing={1}>
-            <Grid item>
+          <div className="flex pb-3">
+            <div className="pr-2">
               <social.icon />
-            </Grid>
-            <Grid item>{social.name}</Grid>
-          </Grid>
-        </Link>
+            </div>
+            <div>{social.name}</div>
+          </div>
+        </a>
       ))}
     </SidebarSection>
   );

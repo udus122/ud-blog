@@ -1,13 +1,16 @@
-import * as React from "react";
 import SidebarAbout from "@/components/Organisms/SidebarAbout";
 import SidebarSocial from "@/components/Organisms/SidebarSocial";
 
-const Sidebar = (): JSX.Element => {
+type Props = {
+  className?: string;
+};
+
+const Sidebar = ({ className }: Props): JSX.Element => {
   return (
-    <React.Fragment>
+    <aside className={className}>
       <SidebarAbout />
       <SidebarSocial />
-    </React.Fragment>
+    </aside>
   );
 };
 

@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Box, Heading, Text } from "@chakra-ui/react";
 import Copyright from "@/components/Organisms/Copyright";
 
 type IProps = {
@@ -9,13 +8,11 @@ type IProps = {
 
 const Footer = ({ title, description }: IProps): JSX.Element => {
   return (
-    <Box as="footer" backgroundColor="gray.500" p={6}>
-      <Heading as="h6" textAlign="center" mb={3} fontSize="1.5rem">
-        {title}
-      </Heading>
-      <Text textAlign="center">{description}</Text>
+    <footer className="bg-gray-500 py-12">
+      <h6 className="text-2xl font-bold text-center">{title}</h6>
+      <p className="text-center">{description}</p>
       <Copyright />
-    </Box>
+    </footer>
   );
 };
 

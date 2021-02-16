@@ -1,27 +1,23 @@
 import * as React from "react";
-import { Flex, Grid, GridItem } from "@chakra-ui/react";
 import Header from "@/components/Organisms/Header";
 import Main from "@/components/Organisms/Main";
 import Sidebar from "@/components/Organisms/Sidebar";
 import Footer from "@/components/Organisms/Footer";
 
-type IProps = {
+type Props = {
   children?: React.ReactNode;
-} & React.ComponentProps<typeof Header>;
+} & React.ComponentProps<typeof Header> &
+  React.ComponentProps<typeof Footer>;
 
-export const BlogTemplate = ({ children, title }: IProps): JSX.Element => {
+export const BlogTemplate = ({ children, title }: Props): JSX.Element => {
   return (
-    <Flex display="flex" direction="column" minHeight="100vh">
+    <div className="flex flex-col min-h-screen">
       <Header title={title} />
-      <Grid templateColumns="repeat(4, 1fr)" px={3} gap={6} flexGrow={1}>
-        <GridItem colSpan={{ base: 4, lg: 3 }}>
-          <Main>{children}</Main>
-        </GridItem>
-        <GridItem colSpan={{ base: 4, lg: 1 }}>
-          <Sidebar />
-        </GridItem>
-      </Grid>
+      <section className="flex-grow grid grid-cols-12 gap-6 px-6 mt-6">
+        <Main className="col-span-12 lg:col-span-9">{children}</Main>
+        <Sidebar className="col-span-12 lg:col-span-3" />
+      </section>
       <Footer title={title} />
-    </Flex>
+    </div>
   );
 };

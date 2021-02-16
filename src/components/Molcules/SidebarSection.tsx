@@ -1,4 +1,3 @@
-import { Typography, useTheme } from "@material-ui/core";
 import * as React from "react";
 
 type IProps = {
@@ -7,14 +6,11 @@ type IProps = {
 };
 
 const SidebarSection = ({ children, title }: IProps): JSX.Element => {
-  const theme = useTheme();
   return (
-    <div css={{ paddingBottom: theme.spacing(2) }}>
-      <Typography variant="h6" gutterBottom>
-        {title}
-      </Typography>
+    <section className="pb-4">
+      <h6 className="text-xl font-medium mb-3">{title}</h6>
       {children}
-    </div>
+    </section>
   );
 };
 

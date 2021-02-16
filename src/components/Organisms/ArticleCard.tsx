@@ -1,7 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
 
-type IProps = {
+type Props = {
   title: string;
   date: Date | undefined;
   description: string;
@@ -15,18 +15,10 @@ const ArticleCard = ({
   date,
   description,
   articleUrl,
-}: IProps): JSX.Element => {
+}: Props): JSX.Element => {
   return (
-    /* 
-    要件:
-    全体の高さは固定: 〇〇rem。macbook proにて4枚ちょうど表示されるくらいが理想
-    タイトルは高さ以上にならない限りすべて表示
-    本文先頭はタイトルを表示後、できる限り表示し、はみ出る場合はellipsis
-    Learn More、ビュー、コメント数の部分の高さも固定
-    著者の部分はタグにして高さ固定
-    */
     <React.Fragment>
-      <div className="p-12 flex flex-col items-start">
+      <div className="flex flex-col items-start">
         <span className="inline-block py-1 px-2 rounded bg-blue-50 text-steel-500 text-xs font-medium tracking-widest">
           {"CATEGORY"}
         </span>
@@ -59,9 +51,7 @@ const ArticleCard = ({
             {"TAGS"}
           </span>
           <span className="flex-grow flex pl-4">
-            <span className="title-font font-medium text-gray-900">
-              put tags here
-            </span>
+            <span className="title-font font-medium text-gray-900"></span>
           </span>
         </a>
       </div>

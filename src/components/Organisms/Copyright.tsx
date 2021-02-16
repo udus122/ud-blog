@@ -1,17 +1,12 @@
 import * as React from "react";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
 
 const Copyright = (): JSX.Element => {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
+    <p className="text-gray-700 text-center">
       {"Copyright © "}
-      <Link color="inherit" href="https://blog.udusd.dev/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
+      <a href="https://blog.udusd.dev/">UDlog</a> {new Date().getFullYear()}
       {"."}
-    </Typography>
+    </p>
   );
 };
 
