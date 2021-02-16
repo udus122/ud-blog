@@ -1,5 +1,4 @@
-import NextLink from "next/link";
-import { Box, Flex, Link } from "@chakra-ui/react";
+import Link from "next/link";
 
 type IProps = {
   title: string;
@@ -7,21 +6,15 @@ type IProps = {
 
 const Header = ({ title }: IProps): JSX.Element => {
   return (
-    <Flex
-      bg="primary.900"
-      color="white"
-      wrap="wrap"
-      w="100%"
-      mb={8}
-      p={4}
-      boxShadow="xl"
-    >
-      <Link as={NextLink} href="/">
-        <Box fontSize="1.5rem" cursor="pointer">
-          {title}
-        </Box>
-      </Link>
-    </Flex>
+    <nav className="w-full py-4 bg-steel-800 shadow">
+      <div className="w-full container mx-auto flex flex-wrap items-center justify-between">
+        <div className="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
+          <Link href="/">
+            <a className="px-4 text-xl">{title}</a>
+          </Link>
+        </div>
+      </div>
+    </nav>
   );
 };
 
