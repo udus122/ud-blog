@@ -1,7 +1,7 @@
 import * as React from "react";
 import Head from "next/head";
 import Article from "@/components/Organisms/Article";
-import Template from "@/components/Templates/Template";
+import { BlogTemplate } from "@/components/Templates/BlogTemplate";
 
 type IProps = React.ComponentProps<typeof Article>;
 
@@ -11,9 +11,9 @@ const ArticlePage = ({ article }: IProps): JSX.Element => {
       <Head>
         <title>{article.fields.title} - UDlog</title>
       </Head>
-      <Template title={"UDlog"}>
+      <BlogTemplate title={"UDlog"}>
         <Article article={article} />
-      </Template>
+      </BlogTemplate>
     </React.Fragment>
   );
 };
