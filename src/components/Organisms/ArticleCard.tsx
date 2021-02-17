@@ -1,6 +1,9 @@
 import * as React from "react";
 import Link from "next/link";
 
+import CategoryLabel from "@/components/Molcules/CategoryLabel";
+import DateLabel from "@/components/Molcules/DateLabel";
+
 type Props = {
   title: string;
   date: Date | undefined;
@@ -19,9 +22,7 @@ const ArticleCard = ({
   return (
     <React.Fragment>
       <div className="flex flex-col items-start">
-        <span className="inline-block py-1 px-2 rounded bg-blue-50 text-steel-500 text-xs font-medium tracking-widest">
-          {"CATEGORY"}
-        </span>
+        <CategoryLabel>{"CATEGORY"}</CategoryLabel>
         <h2 className="text-xl font-bold text-gray-900 mt-4 mb-4">{title}</h2>
         <p className="leading-relaxed mb-8">{description}</p>
         <div className="flex items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-100 mt-auto w-full">
@@ -42,9 +43,9 @@ const ArticleCard = ({
               </svg>
             </a>
           </Link>
-          <span className="text-gray-400 inline-flex items-center ml-auto leading-none text-sm py-1">
-            {date?.toLocaleDateString()}
-          </span>
+          <DateLabel className="inline-flex items-center ml-auto">
+            {date}
+          </DateLabel>
         </div>
         <a className="inline-flex items-center" href="#">
           <span className="inline-block py-1 px-2 rounded bg-blue-50 text-steel-500 text-xs font-medium tracking-widest">
