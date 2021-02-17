@@ -3,9 +3,7 @@ import { StylesProvider, ThemeProvider } from "@material-ui/core/styles";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import * as React from "react";
-import { ChakraProvider } from "@chakra-ui/react";
 import theme from "@/config/ui";
-import chakra from "@/config/chakra/theme";
 import "../styles/globals.css";
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
@@ -23,9 +21,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
       </Head>
       <StylesProvider injectFirst>
         <ThemeProvider theme={theme}>
-          <ChakraProvider theme={chakra}>
-            <Component {...pageProps} />
-          </ChakraProvider>
+          <Component {...pageProps} />
         </ThemeProvider>
       </StylesProvider>
     </React.Fragment>
