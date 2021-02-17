@@ -1,7 +1,7 @@
 import * as React from "react";
 import type { Entry } from "contentful";
 import type { IArticleFields } from "@/types/contentful";
-import Markdown from "@/components/Atoms/Markdown";
+import Markdown from "@/components/Molcules/Markdown";
 
 import CategoryLabel from "@/components/Molcules/CategoryLabel";
 import DateLabel from "@/components/Molcules/DateLabel";
