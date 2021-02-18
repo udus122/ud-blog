@@ -3,9 +3,9 @@ import Head from "next/head";
 import Article from "@/components/Organisms/Article";
 import { BlogTemplate } from "@/components/Templates/BlogTemplate";
 
-type IProps = React.ComponentProps<typeof Article>;
+type Props = Omit<React.ComponentProps<typeof Article>, "className">;
 
-const ArticlePage = ({ article }: IProps): JSX.Element => {
+const ArticlePage = ({ article }: Props): JSX.Element => {
   return (
     <React.Fragment>
       <Head>
