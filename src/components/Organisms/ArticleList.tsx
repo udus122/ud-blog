@@ -3,11 +3,11 @@ import type { Entry } from "contentful";
 import type { IArticleFields } from "@/types/contentful";
 import ArticleCard from "@/components/Organisms/ArticleCard";
 
-type IProps = {
+type Props = {
   articles: Entry<IArticleFields>[];
 };
 
-const ArticleList = ({ articles }: IProps): JSX.Element => {
+const ArticleList = ({ articles }: Props): JSX.Element => {
   return (
     <article className="grid gap-12 sm:grid-cols-2">
       {articles &&

@@ -5,11 +5,11 @@ import { BlogTemplate } from "@/components/Templates/BlogTemplate";
 import type { IArticleFields } from "@/types/contentful";
 import ArticleList from "@/components/Organisms/ArticleList";
 
-type IProps = {
+type Props = {
   articles: Entry<IArticleFields>[];
 };
 
-const IndexPage = ({ articles }: IProps): JSX.Element => {
+const IndexPage = ({ articles }: Props): JSX.Element => {
   return (
     <React.Fragment>
       <Head>

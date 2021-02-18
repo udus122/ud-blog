@@ -3,9 +3,9 @@ import * as React from "react";
 import IndexPage from "@/components/Pages/IndexPage";
 import { fetchEntries as fetchArticleEntries } from "@/libs/api/article";
 
-type IProps = React.ComponentProps<typeof IndexPage>;
+type Props = React.ComponentProps<typeof IndexPage>;
 
-export const getStaticProps: GetStaticProps<IProps> = async () => {
+export const getStaticProps: GetStaticProps<Props> = async () => {
   const articleCollection = await fetchArticleEntries();
   const articles = articleCollection.items;
   return {

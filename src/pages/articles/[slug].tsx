@@ -6,13 +6,13 @@ import {
 } from "@/libs/api/article";
 import ArticlePage from "@/components/Pages/ArticlePage";
 
-type IQuery = {
+type Query = {
   slug: string;
 };
 
-type IProps = React.ComponentProps<typeof ArticlePage>;
+type Props = React.ComponentProps<typeof ArticlePage>;
 
-export const getStaticPaths: GetStaticPaths<IQuery> = async () => {
+export const getStaticPaths: GetStaticPaths<Query> = async () => {
   const articleCollection = await fetchArticleEntries();
   const articles = articleCollection.items;
   const paths = articles.map((article) => ({
@@ -26,7 +26,7 @@ export const getStaticPaths: GetStaticPaths<IQuery> = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<IProps, IQuery> = async ({
+export const getStaticProps: GetStaticProps<Props, Query> = async ({
   params,
 }) => {
   try {
