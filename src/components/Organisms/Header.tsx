@@ -1,33 +1,21 @@
-import * as React from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import { Typography } from "@material-ui/core";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
-type IProps = {
+type Props = {
   title: string;
+  className?: string;
 };
 
-const Header = ({ title }: IProps): JSX.Element => {
-  const { pathname } = useRouter();
-
+const Header = ({ title, className }: Props): JSX.Element => {
   return (
-    <React.Fragment>
-      <AppBar position={"static"}>
-        <Toolbar>
+    <header className={`${className} w-full py-4 bg-steel-800 shadow`}>
+      <nav className="w-full container mx-auto flex flex-wrap items-center justify-between">
+        <div className="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
           <Link href="/">
-            <Typography
-              component={pathname === "/" ? "h1" : "div"}
-              variant="h5"
-              css={{ cursor: "pointer" }}
-            >
-              {title}
-            </Typography>
+            <a className="px-4 text-xl">{title}</a>
           </Link>
-        </Toolbar>
-      </AppBar>
-    </React.Fragment>
+        </div>
+      </nav>
+    </header>
   );
 };
 

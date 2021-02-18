@@ -1,30 +1,34 @@
 import * as React from "react";
 import type { Entry } from "contentful";
-import { Box, Divider, Typography, useTheme } from "@material-ui/core";
 import type { IArticleFields } from "@/types/contentful";
-import Markdown from "@/components/Atoms/Markdown";
+import Markdown from "@/components/Molcules/Markdown";
 
-type IProps = { article: Entry<IArticleFields> };
+import CategoryLabel from "@/components/Molcules/CategoryLabel";
+import DateLabel from "@/components/Molcules/DateLabel";
 
-const Article = ({ article }: IProps): JSX.Element => {
-  const theme = useTheme();
-  const { title, body } = article.fields;
+type Props = {
+  className: string;
+  article: Entry<IArticleFields>;
+};
+
+const Article = ({ className, article }: Props): JSX.Element => {
+  const { title, body, date, category } = article.fields;
   return (
-    <React.Fragment>
-      <Typography component="h1" variant="h3" gutterBottom>
-        {title}
-      </Typography>
-      <Divider />
-      <Box mt={3}>
-        <Markdown
-          css={{
-            marginTop: theme.spacing(3),
-          }}
-        >
-          {body ?? ""}
-        </Markdown>
-      </Box>
-    </React.Fragment>
+    <article className={`${className} break-words`}>
+      <header>
+        <CategoryLabel>{category?.fields.name ?? "Category"}</CategoryLabel>
+        <h1>{title}</h1>
+        <div>
+          <DateLabel className="inline-flex items-center ml-auto">
+            {new Date(date)}
+          </DateLabel>
+        </div>
+      </header>
+      <hr className="mt-4" />
+      <section className="mt-8">
+        <Markdown>{body ?? ""}</Markdown>
+      </section>
+    </article>
   );
 };
 

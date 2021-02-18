@@ -1,17 +1,12 @@
 import * as React from "react";
-import { Grid } from "@material-ui/core";
-import type { GridProps } from "@material-ui/core";
 
-type IProps = {
+type Props = {
   children?: React.ReactNode;
-} & GridProps;
+  className?: string;
+};
 
-const Main = ({ children, ...props }: IProps): JSX.Element => {
-  return (
-    <Grid item {...props}>
-      {children}
-    </Grid>
-  );
+const Main = ({ children, className }: Props): JSX.Element => {
+  return <main className={className}>{children}</main>;
 };
 
 export default Main;

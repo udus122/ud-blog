@@ -1,16 +1,9 @@
-import * as React from "react";
-import {
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-  Grid,
-  Hidden,
-  Typography,
-} from "@material-ui/core";
 import Link from "next/link";
 
-type IProps = {
+import CategoryLabel from "@/components/Molcules/CategoryLabel";
+import DateLabel from "@/components/Molcules/DateLabel";
+
+type Props = {
   title: string;
   date: Date | undefined;
   description: string;
@@ -24,47 +17,45 @@ const ArticleCard = ({
   date,
   description,
   articleUrl,
-  imageUrl,
-  imageTitle,
-}: IProps): JSX.Element => {
+}: Props): JSX.Element => {
   return (
-    <Grid item xs={12} md={6}>
-      <Link href={articleUrl} passHref>
-        <CardActionArea component="a">
-          <Card css={{ display: "flex" }}>
-            <div css={{ flex: 1 }}>
-              <CardContent>
-                <Typography component="h2" variant="h5" noWrap>
-                  {title}
-                </Typography>
-                <Typography
-                  variant="caption"
-                  color="textSecondary"
-                  gutterBottom
-                >
-                  {date ? date.toLocaleDateString() : ""}
-                </Typography>
-                <Typography variant="caption" paragraph noWrap>
-                  {description}
-                </Typography>
-                <Typography variant="subtitle1" color="primary">
-                  Continue reading...
-                </Typography>
-              </CardContent>
-            </div>
-            <Hidden xsDown>
-              <CardMedia
-                css={{
-                  width: 160,
-                }}
-                image={imageUrl}
-                title={imageTitle}
-              />
-            </Hidden>
-          </Card>
-        </CardActionArea>
+    <div className="flex flex-col items-start justify-self-center max-w-sm">
+      <CategoryLabel>{"CATEGORY"}</CategoryLabel>
+      <Link href={articleUrl}>
+        <a>
+          <h2 className="text-xl font-bold text-gray-900 mt-4 mb-4">{title}</h2>
+          <p className="leading-relaxed mb-8">{description}</p>
+          <div className="flex items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-100 mt-auto w-full">
+            <span className="text-steel-500 inline-flex items-center">
+              Learn More
+              <svg
+                className="w-4 h-4 ml-2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </span>
+            <DateLabel className="inline-flex items-center ml-auto">
+              {date}
+            </DateLabel>
+          </div>
+        </a>
       </Link>
-    </Grid>
+      <a className="inline-flex items-center" href="#">
+        <span className="inline-block py-1 px-2 rounded bg-blue-50 text-steel-500 text-xs font-medium tracking-widest">
+          {"TAGS"}
+        </span>
+        <span className="flex-grow flex pl-4">
+          <span className="title-font font-medium text-gray-900"></span>
+        </span>
+      </a>
+    </div>
   );
 };
 

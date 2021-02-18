@@ -1,6 +1,5 @@
 import * as React from "react";
 import type { Entry } from "contentful";
-import { Grid } from "@material-ui/core";
 import type { IArticleFields } from "@/types/contentful";
 import ArticleCard from "@/components/Organisms/ArticleCard";
 
@@ -10,7 +9,7 @@ type IProps = {
 
 const ArticleList = ({ articles }: IProps): JSX.Element => {
   return (
-    <Grid container spacing={4}>
+    <article className="grid gap-12 sm:grid-cols-2">
       {articles &&
         articles.map((article) => {
           const date = article.fields.date
@@ -20,7 +19,7 @@ const ArticleList = ({ articles }: IProps): JSX.Element => {
             <ArticleCard
               key={article.sys.id}
               title={article.fields.title}
-              description={article.fields.body?.slice(0, 30) ?? ""}
+              description={article.fields.body?.slice(0, 50) ?? ""}
               articleUrl={`/articles/${article.fields.slug}`}
               date={date}
               imageUrl={article.fields.image?.fields.file.url ?? ""}
@@ -28,7 +27,7 @@ const ArticleList = ({ articles }: IProps): JSX.Element => {
             />
           );
         })}
-    </Grid>
+    </article>
   );
 };
 
