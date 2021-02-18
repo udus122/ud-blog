@@ -12,7 +12,7 @@ const ArticlePage = ({ article }: IProps): JSX.Element => {
         <title>{article.fields.title} - UDlog</title>
       </Head>
       <BlogTemplate title={"UDlog"}>
-        <Article article={article} />
+        <Article className="prose mx-auto" article={article} />
       </BlogTemplate>
     </React.Fragment>
   );

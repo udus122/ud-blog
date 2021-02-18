@@ -30,6 +30,7 @@
     "@emotion/styled": "^11.0.0",
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
+    "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^10.2.4",
     "contentful": "^7.14.8",
     "framer-motion": "^3.3.0-beta.22",

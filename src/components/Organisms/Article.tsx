@@ -6,15 +6,18 @@ import Markdown from "@/components/Molcules/Markdown";
 import CategoryLabel from "@/components/Molcules/CategoryLabel";
 import DateLabel from "@/components/Molcules/DateLabel";
 
-type IProps = { article: Entry<IArticleFields> };
+type Props = {
+  className: string;
+  article: Entry<IArticleFields>;
+};
 
-const Article = ({ article }: IProps): JSX.Element => {
+const Article = ({ className, article }: Props): JSX.Element => {
   const { title, body, date, category } = article.fields;
   return (
-    <article>
-      <header className="">
+    <article className={`${className} break-words`}>
+      <header>
         <CategoryLabel>{category?.fields.name ?? "Category"}</CategoryLabel>
-        <h1 className="text-2xl font-semibold py-6">{title}</h1>
+        <h1>{title}</h1>
         <div>
           <DateLabel className="inline-flex items-center ml-auto">
             {new Date(date)}
