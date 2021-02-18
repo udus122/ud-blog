@@ -16,15 +16,17 @@ const Article = ({ className, article }: Props): JSX.Element => {
   return (
     <article className={`${className} break-words`}>
       <header>
-        <CategoryLabel>{category?.fields.name ?? "Category"}</CategoryLabel>
-        <h1>{title}</h1>
+        <div className="mb-4">
+          <CategoryLabel>{category?.fields.name ?? "Category"}</CategoryLabel>
+        </div>
         <div>
           <DateLabel className="inline-flex items-center ml-auto">
             {new Date(date)}
           </DateLabel>
         </div>
+        <h1>{title}</h1>
       </header>
-      <hr className="mt-4" />
+      <hr />
       <section className="mt-8">
         <Markdown>{body ?? ""}</Markdown>
       </section>
