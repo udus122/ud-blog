@@ -13,7 +13,7 @@ type Props = {
 
 const ArticleCard = ({ title, date, articleUrl }: Props): JSX.Element => {
   return (
-    <div className="flex flex-col items-start justify-self-center max-w-sm w-full">
+    <div className="flex flex-col items-start justify-self-center max-w-md w-full">
       <CategoryLabel>{"CATEGORY"}</CategoryLabel>
       <Link href={articleUrl}>
         <a className="self-stretch">
