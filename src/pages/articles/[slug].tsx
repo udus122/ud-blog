@@ -11,7 +11,7 @@ type Query = {
 type Props = React.ComponentProps<typeof ArticlePage>;
 
 export const getStaticPaths: GetStaticPaths<Query> = async () => {
-  const posts = getAllArticles();
+  const posts = await getAllArticles();
 
   return {
     paths: posts.map((post) => {
@@ -31,7 +31,7 @@ export const getStaticProps: GetStaticProps<Props, Query> = async ({
   if (params === undefined) {
     throw new Error("params is undefined");
   }
-  const article = getArticleBySlug(params.slug);
+  const article = await getArticleBySlug(params.slug);
 
   return {
     props: {

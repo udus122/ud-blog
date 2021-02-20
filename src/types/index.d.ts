@@ -4,6 +4,7 @@ const frontmatterKeys = [
   "slug",
   "author",
   "body",
+  "excerpt",
   "category",
   "tags",
   "ogImage",

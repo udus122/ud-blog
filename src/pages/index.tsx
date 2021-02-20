@@ -6,7 +6,7 @@ import { getAllArticles } from "@/libs/api";
 type Props = React.ComponentProps<typeof IndexPage>;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const allArticles = getAllArticles();
+  const allArticles = await getAllArticles();
 
   return {
     props: {

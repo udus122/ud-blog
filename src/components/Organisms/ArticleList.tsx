@@ -16,7 +16,6 @@ const ArticleList = ({ allArticles }: Props): JSX.Element => {
             <ArticleCard
               key={article.slug}
               title={article.title}
-              description={article.body?.slice(0, 50) ?? ""}
               articleUrl={`/articles/${article.slug}`}
               date={date}
               imageUrl={article.coverImage ?? ""}

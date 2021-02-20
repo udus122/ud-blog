@@ -12,12 +12,12 @@ const generateFeedXml = async (): Promise<string> => {
     language: "ja",
   });
 
-  const allArticles = getAllArticles();
+  const allArticles = await getAllArticles();
   const articles = allArticles.slice(0, 15);
 
   articles.forEach((article) => {
     const title = article.title;
-    const description = article.body.slice(0, 400);
+    const description = article.excerpt;
     const date = new Date(article.date);
     const slug = article.slug;
     const url = `${SITE_URL}/articles/${slug}`;
