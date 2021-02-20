@@ -1,5 +1,5 @@
 import RSS from "rss";
-import { fetchEntries } from "@/libs/api/article";
+import { getAllArticles } from "@/libs/api";
 
 const SITE_URL = "https://blog.udusd.dev";
 
@@ -12,14 +12,14 @@ const generateFeedXml = async (): Promise<string> => {
     language: "ja",
   });
 
-  const articleCollection = await fetchEntries();
-  const articles = articleCollection.items.slice(0, 15);
+  const allArticles = getAllArticles();
+  const articles = allArticles.slice(0, 15);
 
   articles.forEach((article) => {
-    const title = article.fields.title;
-    const description = article.fields.body.slice(0, 400);
-    const date = new Date(article.fields.date);
-    const slug = article.fields.slug;
+    const title = article.title;
+    const description = article.body.slice(0, 400);
+    const date = new Date(article.date);
+    const slug = article.slug;
     const url = `${SITE_URL}/articles/${slug}`;
 
     feed.item({

@@ -9,8 +9,7 @@
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
     "lint": "eslint ./src --ext ts --ext tsx --ext js",
-    "lint:fix": "eslint --fix ./src --ext ts --ext tsx --ext js",
-    "contentful-typescript-codegen": "contentful-typescript-codegen --output src/types/contentful/index.d.ts"
+    "lint:fix": "eslint --fix ./src --ext ts --ext tsx --ext js"
   },
   "husky": {
     "hooks": {
@@ -32,8 +31,8 @@
     "@material-ui/icons": "^4.11.2",
     "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^10.2.4",
-    "contentful": "^7.14.8",
     "framer-motion": "^3.3.0-beta.22",
+    "gray-matter": "^4.0.2",
     "next": "^10.0.1",
     "postcss": "^8.2.4",
     "react": "^17.0.1",
@@ -55,8 +54,6 @@
     "@typescript-eslint/eslint-plugin": "^4.7.0",
     "@typescript-eslint/parser": "^4.14.0",
     "babel-loader": "^8.2.1",
-    "contentful-management": "^7.5.2",
-    "contentful-typescript-codegen": "^3.2.1",
     "dotenv": "^8.2.0",
     "eslint": "^7.13.0",
     "eslint-config-prettier": "6.11.0",

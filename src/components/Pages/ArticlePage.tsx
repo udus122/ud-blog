@@ -9,7 +9,7 @@ const ArticlePage = ({ article }: Props): JSX.Element => {
   return (
     <React.Fragment>
       <Head>
-        <title>{article.fields.title} - UDlog</title>
+        <title>{article.title} - UDlog</title>
       </Head>
       <BlogTemplate title={"UDlog"}>
         <Article className="prose mx-auto" article={article} />

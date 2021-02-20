@@ -1,29 +1,26 @@
 import * as React from "react";
-import type { Entry } from "contentful";
-import type { IArticleFields } from "@/types/contentful";
 import ArticleCard from "@/components/Organisms/ArticleCard";
+import { BlogItem } from "@/types";
 
 type Props = {
-  articles: Entry<IArticleFields>[];
+  allArticles: BlogItem[];
 };
 
-const ArticleList = ({ articles }: Props): JSX.Element => {
+const ArticleList = ({ allArticles }: Props): JSX.Element => {
   return (
     <article className="grid gap-12 sm:grid-cols-2">
-      {articles &&
-        articles.map((article) => {
-          const date = article.fields.date
-            ? new Date(article.fields.date)
-            : undefined;
+      {allArticles &&
+        allArticles.map((article) => {
+          const date = article.date ? new Date(article.date) : undefined;
           return (
             <ArticleCard
-              key={article.sys.id}
-              title={article.fields.title}
-              description={article.fields.body?.slice(0, 50) ?? ""}
-              articleUrl={`/articles/${article.fields.slug}`}
+              key={article.slug}
+              title={article.title}
+              description={article.body?.slice(0, 50) ?? ""}
+              articleUrl={`/articles/${article.slug}`}
               date={date}
-              imageUrl={article.fields.image?.fields.file.url ?? ""}
-              imageTitle={article.fields.image?.fields.file.fileName ?? ""}
+              imageUrl={article.coverImage ?? ""}
+              imageTitle={article.coverImage ?? ""} // file名にする
             />
           );
         })}
