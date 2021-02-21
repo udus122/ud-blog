@@ -16,7 +16,9 @@
     "typeRoots": ["node_modules/@types", "src/types"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "unist-util-find": ["./src/types/unist-util-find.d.ts"],
+      "unist-util-remove": ["./src/types/unist-util-remove.d.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
