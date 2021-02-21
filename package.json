@@ -43,7 +43,9 @@
     "remark-gfm": "^1.0.0",
     "rss": "^1.2.2",
     "strip-markdown": "^4.0.0",
-    "tailwindcss": "^2.0.2"
+    "tailwindcss": "^2.0.2",
+    "unist-util-find": "^1.0.2",
+    "unist-util-remove": "^2.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.8",
@@ -53,6 +55,7 @@
     "@types/react-dom": "^16.9.9",
     "@types/react-syntax-highlighter": "^13.5.0",
     "@types/rss": "^0.0.28",
+    "@types/unist": "^2.0.3",
     "@typescript-eslint/eslint-plugin": "^4.7.0",
     "@typescript-eslint/parser": "^4.14.0",
     "babel-loader": "^8.2.1",
@@ -66,6 +69,7 @@
     "husky": "^4.3.8",
     "lint-staged": "^10.5.3",
     "prettier": "^2.1.2",
+    "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
   }
 }

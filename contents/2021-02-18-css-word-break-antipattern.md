@@ -16,11 +16,9 @@ date: "2021-02-18T05:35:07.322Z"
 
 CSS の改行処理を行うプロパティは 3 種類ある
 
-overflow-wrap
-
-word-wrap
-
-word-break
+- `overflow-wrap`
+- `word-wrap`
+- `word-break`
 
 これらの違いを説明しつつ、CSS の改行処理関連プロパティの違いの解説と非推奨な値の指定方法を紹介することがこの記事の目的
 
@@ -40,9 +38,7 @@ word-break
 > [overflow-wrap - CSS: カスケーディングスタイルシート | MDN](https://developer.mozilla.org/ja/docs/Web/CSS/overflow-wrap)
 
 もともと`word-wrap`だったものが、`overflow-wrap`に名前を変えてます。
-
 なので、基本的に`overflow-wrap`だけを使っていれば問題ないでしょう。
-
 `word-wrap`が出てきたときも`overflow-wrap`に読み替えてください。
 
 ### overflow-wrap と word-break の違い
@@ -56,7 +52,7 @@ word-break
 というのが 2 つの CSS プロパティの違いです。  
 以下の表現もわかりやすいかなと思います。
 
-> word-break : 表示範囲最後まで来た時、（単語が長かろうが短かろうが）単語の途中で改行させるかどうか<br/>overflow-wrap (word-wrap) : 表示範囲に収まらない長い連続する文字列を、途中で改行させるかどうか
+> word-break : 表示範囲最後まで来た時、（単語が長かろうが短かろうが）単語の途中で改行させるかどうか<br/>overflow-wrap (word-wrap) : 表示範囲に収まらない長い連続する文字列を、途中で改行させるかどうか  
 > [【CSS】overflow-wrap (word-wrap) と word-break の違い | Hazu Labo](https://web.hazu.jp/overflow-wrap-word-break/)
 
 この 2 つの違いを理解する上で何がややこしいかと言うと、`overflow-wrap`と`word-break`のどちらにも`break-word`という値が存在し、しかもその挙動が異なるということです。
@@ -65,12 +61,12 @@ word-break
 
 `overflow-wrap: break-word`は MDN には以下にあるようにあります。
 
-> `break-word`<br/>anywhere の値と同様に、行内にその他の分割可能な位置がない場合、通常は分割可能でない単語が任意の場所で分割されますが、コンテンツの最小固有寸法を計算する時に、単語分割によって導入された折り返し可能位置が考慮されません。
+> `break-word`<br/>anywhere の値と同様に、行内にその他の分割可能な位置がない場合、通常は分割可能でない単語が任意の場所で分割されますが、コンテンツの最小固有寸法を計算する時に、単語分割によって導入された折り返し可能位置が考慮されません。  
 > [overflow-wrap - CSS: カスケーディングスタイルシート | MDN](https://developer.mozilla.org/ja/docs/Web/CSS/overflow-wrap)
 
 一方で、`word-break: break-word`には以下のようにあります。
 
-> `break-word`<br/>overflow-wrap プロパティの値とは関係なく、 word-break: normal や overflow-wrap: anywhere と同じ効果になります。
+> `break-word`<br/>overflow-wrap プロパティの値とは関係なく、 word-break: normal や overflow-wrap: anywhere と同じ効果になります。  
 > [word-break - CSS: カスケーディングスタイルシート | MDN](https://developer.mozilla.org/ja/docs/Web/CSS/word-break)
 
 このように、`over-flow`と`word-break`で同じ名前の`break-word`という値があるにも関わらず、その挙動は異なるということです。
@@ -82,11 +78,9 @@ word-break
 ### 結局どれを使えば良いのか
 
 `word-wrap`は過去の仕様との互換性を保つためのプロパティなので、原則使わなくていいでしょう
-
 `word-break: break-word`も非推奨ですし、挙動も直感的ではないので使わないほうがいいでしょう
 
 後は`overflow-wrap: break-word`や`word-break: break-all`などその他の値の使い分けに関してですが、
-
 以下の記事に詳しく書いてあるので、参照すると良いと思います。
 
 [word-break と word-wrap はややこしい](https://w3g.jp/blog/confusing_word-break_word-wrap)

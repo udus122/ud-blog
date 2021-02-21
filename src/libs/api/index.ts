@@ -1,7 +1,7 @@
 import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
-import { markdownToPlain } from "@/libs/markdown";
+import { markdownToPlain, separateTitleBody } from "@/libs/markdown";
 
 import type { BlogItem } from "@/types";
 
@@ -19,13 +19,15 @@ export const getArticleBySlug = async (slug: string): Promise<BlogItem> => {
 
   const plainContent = await markdownToPlain(content);
 
+  const { title, body } = await separateTitleBody(content);
+
   return {
-    title: data.title ?? null,
+    title: title ?? null,
     date: data.date ?? null,
     slug: realSlug ?? null,
     author: data.author ?? null,
     excerpt: plainContent.slice(0, 400),
-    body: content ?? null,
+    body: body ?? null,
     category: data.category ?? null,
     tags: data.tags ?? null,
     ogImage: data.ogImage ?? null,
