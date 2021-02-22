@@ -1,6 +1,5 @@
 import * as React from "react";
-import type { Entry } from "contentful";
-import type { IArticleFields } from "@/types/contentful";
+import { BlogItem } from "@/types";
 import Markdown from "@/components/Molcules/Markdown";
 
 import CategoryLabel from "@/components/Molcules/CategoryLabel";
@@ -8,16 +7,16 @@ import DateLabel from "@/components/Molcules/DateLabel";
 
 type Props = {
   className: string;
-  article: Entry<IArticleFields>;
+  article: BlogItem;
 };
 
 const Article = ({ className, article }: Props): JSX.Element => {
-  const { title, body, date, category } = article.fields;
+  const { title, body, date, category } = article;
   return (
     <article className={`${className} break-words`}>
       <header>
         <div className="mb-4">
-          <CategoryLabel>{category?.fields.name ?? "Category"}</CategoryLabel>
+          <CategoryLabel>{category ?? "Category"}</CategoryLabel>
         </div>
         <div>
           <DateLabel className="inline-flex items-center ml-auto">

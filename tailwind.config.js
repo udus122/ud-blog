@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   purge: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
@@ -6,6 +8,29 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            code: {
+              color: theme("colors.gray.900", defaultTheme.colors.gray[900]),
+              padding: "0.1em 0.3em",
+              borderRadius: "6px",
+              verticalAlign: "middle",
+              fontWeight: "600",
+              backgroundColor: theme(
+                "colors.gray.300",
+                defaultTheme.colors.gray[300]
+              ),
+            },
+            "code::before": {
+              content: "none",
+            },
+            "code::after": {
+              content: "none",
+            },
+          },
+        },
+      }),
       colors: {
         denim: {
           50: "#f5fafc",

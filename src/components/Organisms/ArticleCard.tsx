@@ -6,25 +6,18 @@ import DateLabel from "@/components/Molcules/DateLabel";
 type Props = {
   title: string;
   date: Date | undefined;
-  description: string;
   articleUrl: string;
   imageUrl?: string | undefined;
   imageTitle?: string | undefined;
 };
 
-const ArticleCard = ({
-  title,
-  date,
-  description,
-  articleUrl,
-}: Props): JSX.Element => {
+const ArticleCard = ({ title, date, articleUrl }: Props): JSX.Element => {
   return (
-    <div className="flex flex-col items-start justify-self-center max-w-sm">
+    <div className="flex flex-col items-start justify-self-center max-w-md w-full">
       <CategoryLabel>{"CATEGORY"}</CategoryLabel>
       <Link href={articleUrl}>
-        <a>
+        <a className="self-stretch">
           <h2 className="text-xl font-bold text-gray-900 mt-4 mb-4">{title}</h2>
-          <p className="leading-relaxed mb-8">{description}</p>
           <div className="flex items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-100 mt-auto w-full">
             <span className="text-steel-500 inline-flex items-center">
               Learn More
@@ -47,7 +40,7 @@ const ArticleCard = ({
           </div>
         </a>
       </Link>
-      <a className="inline-flex items-center" href="#">
+      <a className="inline-flex" href="#">
         <span className="inline-block py-1 px-2 rounded bg-blue-50 text-steel-500 text-xs font-medium tracking-widest">
           {"TAGS"}
         </span>
