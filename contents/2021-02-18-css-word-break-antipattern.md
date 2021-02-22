@@ -52,7 +52,8 @@ CSS の改行処理を行うプロパティは 3 種類ある
 というのが 2 つの CSS プロパティの違いです。  
 以下の表現もわかりやすいかなと思います。
 
-> word-break : 表示範囲最後まで来た時、（単語が長かろうが短かろうが）単語の途中で改行させるかどうか<br/>overflow-wrap (word-wrap) : 表示範囲に収まらない長い連続する文字列を、途中で改行させるかどうか  
+> word-break : 表示範囲最後まで来た時、（単語が長かろうが短かろうが）単語の途中で改行させるかどうか
+> overflow-wrap (word-wrap) : 表示範囲に収まらない長い連続する文字列を、途中で改行させるかどうか  
 > [【CSS】overflow-wrap (word-wrap) と word-break の違い | Hazu Labo](https://web.hazu.jp/overflow-wrap-word-break/)
 
 この 2 つの違いを理解する上で何がややこしいかと言うと、`overflow-wrap`と`word-break`のどちらにも`break-word`という値が存在し、しかもその挙動が異なるということです。
@@ -61,12 +62,14 @@ CSS の改行処理を行うプロパティは 3 種類ある
 
 `overflow-wrap: break-word`は MDN には以下にあるようにあります。
 
-> `break-word`<br/>anywhere の値と同様に、行内にその他の分割可能な位置がない場合、通常は分割可能でない単語が任意の場所で分割されますが、コンテンツの最小固有寸法を計算する時に、単語分割によって導入された折り返し可能位置が考慮されません。  
+> `break-word`
+> anywhere の値と同様に、行内にその他の分割可能な位置がない場合、通常は分割可能でない単語が任意の場所で分割されますが、コンテンツの最小固有寸法を計算する時に、単語分割によって導入された折り返し可能位置が考慮されません。  
 > [overflow-wrap - CSS: カスケーディングスタイルシート | MDN](https://developer.mozilla.org/ja/docs/Web/CSS/overflow-wrap)
 
 一方で、`word-break: break-word`には以下のようにあります。
 
-> `break-word`<br/>overflow-wrap プロパティの値とは関係なく、 word-break: normal や overflow-wrap: anywhere と同じ効果になります。  
+> `break-word`
+> overflow-wrap プロパティの値とは関係なく、 word-break: normal や overflow-wrap: anywhere と同じ効果になります。  
 > [word-break - CSS: カスケーディングスタイルシート | MDN](https://developer.mozilla.org/ja/docs/Web/CSS/word-break)
 
 このように、`over-flow`と`word-break`で同じ名前の`break-word`という値があるにも関わらず、その挙動は異なるということです。
@@ -91,10 +94,7 @@ CSS の改行処理を行うプロパティは 3 種類ある
 
 ## 参考
 
-[overflow-wrap: break-word; や word-break: break-all; が万能の改行処理だったなら、こんなに苦労していない - Qiita](https://qiita.com/akane_kato/items/2b1385574e1a1babdde1)
-
-[word-break と word-wrap はややこしい](https://w3g.jp/blog/confusing_word-break_word-wrap)
-
-[overflow-wrap - CSS: カスケーディングスタイルシート | MDN](https://developer.mozilla.org/ja/docs/Web/CSS/overflow-wrap)
-
-[【CSS】overflow-wrap (word-wrap) と word-break の違い | Hazu Labo](https://web.hazu.jp/overflow-wrap-word-break/)
+- [overflow-wrap: break-word; や word-break: break-all; が万能の改行処理だったなら、こんなに苦労していない - Qiita](https://qiita.com/akane_kato/items/2b1385574e1a1babdde1)
+- [word-break と word-wrap はややこしい](https://w3g.jp/blog/confusing_word-break_word-wrap)
+- [overflow-wrap - CSS: カスケーディングスタイルシート | MDN](https://developer.mozilla.org/ja/docs/Web/CSS/overflow-wrap)
+- [【CSS】overflow-wrap (word-wrap) と word-break の違い | Hazu Labo](https://web.hazu.jp/overflow-wrap-word-break/)
