@@ -4,6 +4,7 @@ import gfm from "remark-gfm";
 import breaks from "remark-breaks";
 import math from "remark-math";
 
+import Heading from "@/components/Atoms/Heading";
 import InlineMath from "@/components/Atoms/InlineMath";
 import Math from "@/components/Atoms/Math";
 
@@ -14,6 +15,7 @@ type Props = {
 const renderers = {
   inlineMath: InlineMath,
   math: Math,
+  heading: Heading,
 };
 
 const Markdown = ({ children }: Props): JSX.Element => {

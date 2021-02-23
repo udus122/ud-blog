@@ -16,16 +16,34 @@ module.exports = {
               padding: "0.1em 0.3em",
               borderRadius: "6px",
               verticalAlign: "middle",
-              fontWeight: "600",
+              fontWeight: "500",
               backgroundColor: theme(
-                "colors.gray.300",
-                defaultTheme.colors.gray[300]
+                "colors.gray.200",
+                defaultTheme.colors.gray[200]
               ),
             },
             "code::before": {
               content: "none",
             },
             "code::after": {
+              content: "none",
+            },
+            "ol > li": {
+              paddingLeft: "1.25rem",
+            },
+            "ul > li": {
+              paddingLeft: "1.25rem",
+            },
+            "ul > li::before": {
+              backgroundColor: theme(
+                "colors.gray.700",
+                defaultTheme.colors.gray[700]
+              ),
+            },
+            "blockquote p:first-of-type::before": {
+              content: "none",
+            },
+            "blockquote p:last-of-type::after": {
               content: "none",
             },
           },

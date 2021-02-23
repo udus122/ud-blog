@@ -18,3 +18,5 @@ export type Frontmatter = typeof frontmatterKeys[number];
 export type BlogItem = {
   [key in Frontmatter]: string;
 };
+
+export type TocInfo = { value: string; id: string; depth: number }[];

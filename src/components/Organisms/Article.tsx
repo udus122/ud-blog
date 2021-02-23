@@ -1,9 +1,11 @@
 import * as React from "react";
-import { BlogItem } from "@/types";
-import Markdown from "@/components/Molcules/Markdown";
 
+import { BlogItem } from "@/types";
+import { extractToc } from "@/libs/markdown";
+import Markdown from "@/components/Molcules/Markdown";
 import CategoryLabel from "@/components/Molcules/CategoryLabel";
 import DateLabel from "@/components/Molcules/DateLabel";
+import Toc from "@/components/Organisms/Toc";
 
 type Props = {
   className: string;
@@ -12,6 +14,7 @@ type Props = {
 
 const Article = ({ className, article }: Props): JSX.Element => {
   const { title, body, date, category } = article;
+  const toc = extractToc(body);
   return (
     <article className={`${className} break-words`}>
       <header>
@@ -27,6 +30,7 @@ const Article = ({ className, article }: Props): JSX.Element => {
       </header>
       <hr />
       <section className="mt-8">
+        <Toc toc={toc} inBody></Toc>
         <Markdown>{body ?? ""}</Markdown>
       </section>
     </article>

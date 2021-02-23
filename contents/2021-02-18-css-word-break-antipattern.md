@@ -7,10 +7,10 @@ date: "2021-02-18T05:35:07.322Z"
 
 ## この記事で分かること
 
-`overflow-wrap`  
-`word-wrap`  
-`word-break`  
-の違い
+- `overflow-wrap`
+- `word-wrap`
+- `word-break`
+  の違い
 
 ## まえがき
 
