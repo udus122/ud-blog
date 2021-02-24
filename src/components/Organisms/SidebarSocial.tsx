@@ -6,14 +6,18 @@ import {
 
 import SidebarSection from "@/components/Molcules/SidebarSection";
 
+type Props = {
+  className?: string;
+};
+
 const socials = [
   { name: "GitHub", icon: GitHubIcon, url: "https://github.com/yudai1202" },
   { name: "Twitter", icon: TwitterIcon, url: "https://twitter.com/udus122" },
 ];
 
-const Sidebar = (): JSX.Element => {
+const Sidebar = ({ className }: Props): JSX.Element => {
   return (
-    <SidebarSection title="Social">
+    <SidebarSection title="Social" className={`${className}`}>
       {socials.map((social) => (
         <a
           className="text-steel-800 hover:underline"

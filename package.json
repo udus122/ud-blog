@@ -22,7 +22,7 @@
       "yarn lint",
       "yarn format"
     ],
-    "*.{md,html,css}": "prettier --write"
+    "*.{html,css}": "prettier --write"
   },
   "dependencies": {
     "@emotion/react": "^11.1.4",

@@ -1,8 +1,12 @@
 import SidebarSection from "@/components/Molcules/SidebarSection";
 
-const Sidebar = (): JSX.Element => {
+type Props = {
+  className?: string;
+};
+
+const Sidebar = ({ className }: Props): JSX.Element => {
   return (
-    <SidebarSection title="About">
+    <SidebarSection title="About" className={className}>
       <img className="w-14" alt="avator" src="/ud-avator.png" />
       <span className="leading-loose">UD</span>
       <p className="mt-4 text-gray-600">
