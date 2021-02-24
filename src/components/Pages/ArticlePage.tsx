@@ -1,17 +1,17 @@
 import * as React from "react";
-import Head from "next/head";
+
 import Article from "@/components/Organisms/Article";
 import Toc from "@/components/Organisms/Toc";
 import { BlogTemplate } from "@/components/Templates/BlogTemplate";
+import SEO from "@/components/Molcules/SEO";
 
 type Props = Omit<React.ComponentProps<typeof Article>, "className">;
 
 const ArticlePage = ({ article }: Props): JSX.Element => {
   return (
     <React.Fragment>
-      <Head>
-        <title>{article.title} - UDlog</title>
-      </Head>
+      <SEO title={article.title} />
+
       <BlogTemplate
         title={"UDlog"}
         sideContents={{

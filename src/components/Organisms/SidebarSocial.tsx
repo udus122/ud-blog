@@ -3,6 +3,7 @@ import {
   GitHub as GitHubIcon,
   Twitter as TwitterIcon,
 } from "@material-ui/icons";
+import siteMeta from "@/config";
 
 import SidebarSection from "@/components/Molcules/SidebarSection";
 
@@ -11,8 +12,16 @@ type Props = {
 };
 
 const socials = [
-  { name: "GitHub", icon: GitHubIcon, url: "https://github.com/yudai1202" },
-  { name: "Twitter", icon: TwitterIcon, url: "https://twitter.com/udus122" },
+  {
+    name: "GitHub",
+    icon: GitHubIcon,
+    url: `https://github.com/${siteMeta.social.github}`,
+  },
+  {
+    name: "Twitter",
+    icon: TwitterIcon,
+    url: `https://twitter.com/${siteMeta.social.twitter}`,
+  },
 ];
 
 const Sidebar = ({ className }: Props): JSX.Element => {
