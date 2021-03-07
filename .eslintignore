@@ -9,3 +9,5 @@
 
 # rootのjsファイルに対しててlintしない
 *.js
+
+example/**

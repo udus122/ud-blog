@@ -1,7 +1,7 @@
 import * as React from "react";
+
 import { BlogItem } from "@/types";
 import Markdown from "@/components/Molcules/Markdown";
-
 import CategoryLabel from "@/components/Molcules/CategoryLabel";
 import DateLabel from "@/components/Molcules/DateLabel";
 
@@ -12,6 +12,7 @@ type Props = {
 
 const Article = ({ className, article }: Props): JSX.Element => {
   const { title, body, date, category } = article;
+
   return (
     <article className={`${className} break-words`}>
       <header>

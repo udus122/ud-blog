@@ -1,18 +1,19 @@
 import * as React from "react";
-import Head from "next/head";
+
 import Header from "@/components/Organisms/Header";
 import Footer from "@/components/Organisms/Footer";
+import siteMeta from "@/config";
+import SEO from "@/components/Molcules/SEO";
 
 const NotFound = (): JSX.Element => {
-  const blogTitle = "UDlog";
+  const { siteTitle } = siteMeta;
 
   return (
     <React.Fragment>
-      <Head>
-        <title>Page Not Found - {blogTitle}</title>
-      </Head>
+      <SEO title="Page Not Found" />
+
       <div className="flex flex-col min-h-screen">
-        <Header title={blogTitle} />
+        <Header title={siteTitle} />
         <div className="flex-grow w-screen bg-gray-100 flex items-center">
           <div className="container flex flex-col md:flex-row items-center justify-center px-5 text-gray-700">
             <div className="max-w-lg">
@@ -34,7 +35,7 @@ const NotFound = (): JSX.Element => {
             </div>
           </div>
         </div>
-        <Footer title={blogTitle} />
+        <Footer title={siteTitle} />
       </div>
     </React.Fragment>
   );

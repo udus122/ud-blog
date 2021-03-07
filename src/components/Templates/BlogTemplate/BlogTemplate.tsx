@@ -6,16 +6,24 @@ import Footer from "@/components/Organisms/Footer";
 
 type Props = {
   children?: React.ReactNode;
+  // sideContents?: { title: string; content: React.ReactNode };
 } & React.ComponentProps<typeof Header> &
-  React.ComponentProps<typeof Footer>;
+  React.ComponentProps<typeof Footer> &
+  React.ComponentProps<typeof Sidebar>;
 
-export const BlogTemplate = ({ children, title }: Props): JSX.Element => {
+export const BlogTemplate = ({
+  children,
+  sideContents,
+  title,
+}: Props): JSX.Element => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header title={title} />
-      <section className="flex-grow grid grid-cols-12 gap-6 px-6 mt-6">
+      <section className="grid flex-grow grid-cols-12 gap-6 px-6 mt-6">
         <Main className="col-span-12 lg:col-span-9">{children}</Main>
-        <Sidebar className="col-span-12 lg:col-span-3" />
+        <div className="col-span-12 lg:col-span-3">
+          <Sidebar className="sticky top-8" sideContents={sideContents} />
+        </div>
       </section>
       <Footer title={title} />
     </div>

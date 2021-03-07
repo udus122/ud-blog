@@ -7,10 +7,10 @@ date: "2021-02-18T05:35:07.322Z"
 
 ## この記事で分かること
 
-`overflow-wrap`  
-`word-wrap`  
-`word-break`  
-の違い
+- `overflow-wrap`
+- `word-wrap`
+- `word-break`
+  の違い
 
 ## まえがき
 
@@ -34,7 +34,7 @@ CSS の改行処理を行うプロパティは 3 種類ある
 
 下記の引用にあるように、この 2 つは名前が違うだけで、中身は同じです。
 
-> このプロパティはもともと、標準外かつ接頭辞のない `word-wrap` と呼ばれる Microsoft 拡張であり、多くのブラウザーはこの名前で実装していました。 `overflow-wrap` に改名されたため、 `word-wrap` は別名になりました。
+> このプロパティはもともと、標準外かつ接頭辞のない`word-wrap`と呼ばれる Microsoft 拡張であり、多くのブラウザーはこの名前で実装していました。`overflow-wrap`に改名されたため、`word-wrap`は別名になりました。
 > [overflow-wrap - CSS: カスケーディングスタイルシート | MDN](https://developer.mozilla.org/ja/docs/Web/CSS/overflow-wrap)
 
 もともと`word-wrap`だったものが、`overflow-wrap`に名前を変えてます。
@@ -52,14 +52,12 @@ CSS の改行処理を行うプロパティは 3 種類ある
 というのが 2 つの CSS プロパティの違いです。  
 以下の表現もわかりやすいかなと思います。
 
-> word-break : 表示範囲最後まで来た時、（単語が長かろうが短かろうが）単語の途中で改行させるかどうか
-> overflow-wrap (word-wrap) : 表示範囲に収まらない長い連続する文字列を、途中で改行させるかどうか  
+> word-break: 表示範囲最後まで来た時、(単語が長かろうが短かろうが)単語の途中で改行させるかどうか
+> overflow-wrap(word-wrap): 表示範囲に収まらない長い連続する文字列を、途中で改行させるかどうか  
 > [【CSS】overflow-wrap (word-wrap) と word-break の違い | Hazu Labo](https://web.hazu.jp/overflow-wrap-word-break/)
 
 この 2 つの違いを理解する上で何がややこしいかと言うと、`overflow-wrap`と`word-break`のどちらにも`break-word`という値が存在し、しかもその挙動が異なるということです。
-
 どういうことかと言うと、
-
 `overflow-wrap: break-word`は MDN には以下にあるようにあります。
 
 > `break-word`
@@ -69,7 +67,7 @@ CSS の改行処理を行うプロパティは 3 種類ある
 一方で、`word-break: break-word`には以下のようにあります。
 
 > `break-word`
-> overflow-wrap プロパティの値とは関係なく、 word-break: normal や overflow-wrap: anywhere と同じ効果になります。  
+> overflow-wrap プロパティの値とは関係なく、word-break: normal や overflow-wrap: anywhere と同じ効果になります。  
 > [word-break - CSS: カスケーディングスタイルシート | MDN](https://developer.mozilla.org/ja/docs/Web/CSS/word-break)
 
 このように、`over-flow`と`word-break`で同じ名前の`break-word`という値があるにも関わらず、その挙動は異なるということです。
