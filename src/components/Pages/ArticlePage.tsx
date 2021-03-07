@@ -19,7 +19,7 @@ const ArticlePage = ({ article }: Props): JSX.Element => {
           content: <Toc markdown={article.body} />,
         }}
       >
-        <Article className="prose mx-auto" article={article} />
+        <Article className="mx-auto prose" article={article} />
       </BlogTemplate>
     </React.Fragment>
   );

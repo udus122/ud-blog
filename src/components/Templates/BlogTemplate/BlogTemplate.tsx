@@ -19,7 +19,7 @@ export const BlogTemplate = ({
   return (
     <div className="flex flex-col min-h-screen">
       <Header title={title} />
-      <section className="flex-grow grid grid-cols-12 gap-6 px-6 mt-6">
+      <section className="grid flex-grow grid-cols-12 gap-6 px-6 mt-6">
         <Main className="col-span-12 lg:col-span-9">{children}</Main>
         <div className="col-span-12 lg:col-span-3">
           <Sidebar className="sticky top-8" sideContents={sideContents} />

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { BlogTemplate } from "@/components/Templates/BlogTemplate";
+import { BlogTemplate } from "@/components/Templates";
 import ArticleList from "@/components/Organisms/ArticleList";
 import SEO from "@/components/Molcules/SEO";
 
