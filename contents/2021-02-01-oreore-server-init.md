@@ -1,6 +1,8 @@
 ---
+
 title: "オレオレサーバー初期設定"
 date: "2021-02-01T05:35:07.322Z"
+
 ---
 
 # オレオレサーバー初期設定
@@ -137,7 +139,7 @@ Protocol 2
 #### GitHub へ公開鍵の登録
 
 1. `cat ~/.ssh/id_rsa.pub`で公開鍵を表示して、コピーする。
-2. [https://github.com/settings/ssh](https://github.com/settings/ssh) から公開鍵を GitHub へ登録する
+2. <https://github.com/settings/ssh> から公開鍵を GitHub へ登録する
 3. `ssh -T git@github.com`で接続を確認する。
 
 #### ssh-agent へ秘密鍵を登録
