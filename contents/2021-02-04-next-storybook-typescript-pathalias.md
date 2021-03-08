@@ -1,6 +1,8 @@
 ---
+
 title: "Next.js✕Storybook✕TypeScript の path alias を使うときの設定"
 date: "2021-02-04T05:35:07.322Z"
+
 ---
 
 # Next.js✕Storybook✕TypeScript の path alias を使うときの設定
