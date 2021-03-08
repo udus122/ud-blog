@@ -5,15 +5,15 @@ import { markdownToPlain, separateTitleBody } from "@/libs/markdown";
 
 import type { BlogItem } from "@/types";
 
-const postsDirectory = join(process.cwd(), "contents");
+const contentsDirectory = join(process.cwd(), "contents");
 
 export const getArticleSlugs = (): string[] => {
-  return fs.readdirSync(postsDirectory);
+  return fs.readdirSync(contentsDirectory);
 };
 
 export const getArticleBySlug = async (slug: string): Promise<BlogItem> => {
   const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
+  const fullPath = join(contentsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
@@ -35,10 +35,17 @@ export const getArticleBySlug = async (slug: string): Promise<BlogItem> => {
   };
 };
 
-export const getAllArticles = async (): Promise<BlogItem[]> => {
+export const getArticles = async (
+  start = 0,
+  limit?: number
+): Promise<BlogItem[]> => {
   const slugs = getArticleSlugs();
   const articles = await Promise.all(
     slugs.map((slug) => getArticleBySlug(slug))
   );
-  return articles.sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+
+  const end = limit ? start + limit : articles.length;
+  return articles
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+    .slice(start, end);
 };

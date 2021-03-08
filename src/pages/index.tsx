@@ -1,12 +1,12 @@
 import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import * as React from "react";
 import IndexPage from "@/components/Pages/IndexPage";
-import { getAllArticles } from "@/libs/api";
+import { getArticles } from "@/libs/api";
 
 type Props = React.ComponentProps<typeof IndexPage>;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const allArticles = await getAllArticles();
+  const allArticles = await getArticles();
 
   return {
     props: {

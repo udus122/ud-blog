@@ -1,5 +1,5 @@
 import RSS from "rss";
-import { getAllArticles } from "@/libs/api";
+import { getArticles } from "@/libs/api";
 
 const SITE_URL = "https://blog.udusd.dev";
 
@@ -12,8 +12,7 @@ const generateFeedXml = async (): Promise<string> => {
     language: "ja",
   });
 
-  const allArticles = await getAllArticles();
-  const articles = allArticles.slice(0, 15);
+  const articles = await getArticles(0, 15);
 
   articles.forEach((article) => {
     const title = article.title;

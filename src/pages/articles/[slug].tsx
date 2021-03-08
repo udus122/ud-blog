@@ -1,7 +1,7 @@
 import * as React from "react";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 
-import { getAllArticles, getArticleBySlug } from "@/libs/api";
+import { getArticleBySlug, getArticles } from "@/libs/api";
 import ArticlePage from "@/components/Pages/ArticlePage";
 
 type Query = {
@@ -11,13 +11,13 @@ type Query = {
 type Props = React.ComponentProps<typeof ArticlePage>;
 
 export const getStaticPaths: GetStaticPaths<Query> = async () => {
-  const posts = await getAllArticles();
+  const articles = await getArticles();
 
   return {
-    paths: posts.map((post) => {
+    paths: articles.map((article) => {
       return {
         params: {
-          slug: post.slug,
+          slug: article.slug,
         },
       };
     }),
