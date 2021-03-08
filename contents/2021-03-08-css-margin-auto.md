@@ -1,6 +1,6 @@
 ---
 
-title: "CSS `margin: auto`のはまりどころ、`width`との関係性"
+title: "CSS margin: autoのはまりどころ、widthとの関係性"
 date: "2021-03-08T05:35:07.322Z"
 
 ---
