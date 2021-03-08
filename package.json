@@ -18,9 +18,9 @@
     }
   },
   "lint-staged": {
-    "*.@(ts|tsx|md)": [
+    "*.@(ts|tsx|js|jsx)": [
       "yarn lint",
-      "yarn format"
+      "prettier --write"
     ],
     "*.{html,css}": "prettier --write"
   },
